@@ -11,5 +11,27 @@ Tip: Puedes forzar a realizar la división entera mediante la función intdiv($d
 */
 
 
+function descomponerDinero($cantidad)
+{
+    $denominaciones = [500, 200, 100, 50, 20, 10, 5, 2, 1];
 
+    
+    foreach ($denominaciones as $denominacion) {
+        
+        $cantidadDenominacion = intdiv($cantidad, $denominacion);
+
+   
+        
+        echo "$cantidadDenominacion " . ($denominacion >= 5 ? 'billete' : 'moneda') . ($cantidadDenominacion > 1 ? 's' : '') . " de $denominacion\n";
+        echo "<br>";
+
+      
+        $cantidad %= $denominacion;
+    }
+
+ }
+
+
+// Ejemplo: descomponer 138
+descomponerDinero(138);
 ?>

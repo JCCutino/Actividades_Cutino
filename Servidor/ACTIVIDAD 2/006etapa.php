@@ -7,8 +7,8 @@ adulto entre 18 y 66
 jubilado a partir de 67
  */
 
- $edad = 30;
+ $edad = 14;
 
-
-
+$etapa = $edad < 3 ? "Eres un bebe" : ($edad >= 3 &&  $edad <= 12 ? "Eres un niño" :($edad >= 13 &&  $edad <= 17 ? "Eres un adolescente" : ($edad >= 18 && $edad <= 66 ? "Eres un adulto" : "Eres jubilado")));  
+echo $etapa;
 ?>

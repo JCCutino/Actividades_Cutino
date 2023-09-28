@@ -1,5 +1,9 @@
 <?php
 
+/*Es el mismo ejercicio anterior, pero separando la lógica. 
+En el html crearemos el formulario para introducir los datos,
+ y luego recogemos los datos y generamos la tabla en el segundo archivo.*/ 
+
 $nombre = $_POST['nombre'];
 $primerApellido = $_POST['primer_apellido'];
 $segundoApellido = $_POST['segundo_apellido'];

@@ -8,7 +8,7 @@ $max = 60;
 echo "<ul>";
 
 if($min % 2!= 0){
-    $min = $min-1;
+    $min = $min+1;
 }
 for ($i = $min; $i <= $max; $i += 2) {
     echo "<li>$i</li>";

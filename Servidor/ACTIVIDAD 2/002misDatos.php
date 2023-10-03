@@ -1,9 +1,9 @@
 <?php
 
-/*Es el mismo ejercicio anterior, pero
-separando la lógica. En el html crearemos el formulario para introducir los
-datos, y luego recogemos los datos y generamos la tabla en el segundo
-archivo.*/
+/*Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido,
+ email, año en el que naciste y móvil. Luego muéstralos por pantalla dentro de una tabla.*/
+
+//Creamos todas las variables e introducimos un valor en ellas
 $nombre = "Juan";
 $primerApellido = "Cutiño";
 $segundoApellido = "Cortacero";
@@ -11,6 +11,7 @@ $email = "jcutinocortacero@gmail.com";
 $anoNacimiento = 2001;
 $movil = "653652958";
 
+//Creamos una tabla para mostrar todas las variables
 echo "<table border=1> ";
 echo "<tr><th>Dato</th><th>Valor</th></tr>";
 echo "<tr><td>Nombre</td><td>$nombre</td></tr>";

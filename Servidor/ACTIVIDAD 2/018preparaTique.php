@@ -5,14 +5,14 @@
 */
 
 if (isset($_GET['cantidad_productos'])) {
-    $cantidadProductos = $_GET['cantidad_productos'];
+    $cantidadProductos = $_GET['cantidad_productos']; //Recogemos la cantidad de productos
 ?>
 
-<form action="018imprimeTique.php" method="get">
+<form action="018imprimeTique.php" method="get"> 
     <input type="hidden" name="cantidad_productos" value="<?php echo $cantidadProductos; ?>">
 
     <?php
-    // Generar campos para cada producto
+    // Generamos campos para cada producto y los enviamos
     for ($i = 1; $i <= $cantidadProductos; $i++) {
         echo "<label for='producto_nombre_$i'>Nombre del Producto $i:</label>";
         echo "<input type='text' name='producto_nombre_$i' required><br>";

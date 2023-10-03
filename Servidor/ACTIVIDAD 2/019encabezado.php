@@ -7,3 +7,5 @@
 </head>
 <body>
     <h1>Supermercado Cuti</h1>
+
+    <!--Creamos una plantilla para el encabezado

@@ -4,7 +4,7 @@
   ucwords, strrev, str_repeat y md5. */
 
 echo " <h1>ucwords</h1> ";
-
+//En esta actividad los comentarios están puestos en echos para que sea mas visual
 echo "La función ucwords convierte a mayúscula el primer carácter de cada palabra en una cadena.<br>";
 
 

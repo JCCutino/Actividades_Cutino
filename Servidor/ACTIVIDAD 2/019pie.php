@@ -1,3 +1,3 @@
 <p>Tu supermercado de confianza</p>
 </body>
-</html>
+</html> <!--Creamos una plantilla para el pie de pagina

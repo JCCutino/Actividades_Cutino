@@ -1,6 +1,6 @@
 <?php
-
-$longitudX= $_POST["longitudX"];+
+//El ejercicio es exactamente igual que el anterior pero añadimos un condicional
+$longitudX= $_POST["longitudX"];
 
 $longitudY=  $_POST["longitudY"];
 
@@ -13,10 +13,10 @@ for ($i=1; $i <= $longitudY; $i++) {
     
     for ($j=1; $j <= $longitudX ; $j++) { 
         
-        if ( $j == 1 || $j== $longitudX || $i == 1 || $i == $longitudY ) {
-            echo "<td>$j,$i</td>";
+        if ( $j == 1 || $j== $longitudX || $i == 1 || $i == $longitudY ) { //Comprobamos si la coordenada pertenece a uno de los bordes
+            echo "<td>$j,$i</td>"; //Si es un borde mostramos las coordenadas
         }else{
-        echo "<td> </td>";
+        echo "<td> </td>";  //Si no creamos una celda vacia
         }
     }
     

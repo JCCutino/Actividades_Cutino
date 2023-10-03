@@ -7,13 +7,13 @@ y genere una respuesta de manera aleatoria entre un conjunto de respuestas prede
 Este ejercicio se basa en el juego de la Bola 8 mágica.
 */
 $pregunta= $_POST["pregunta"];
-
+//Creamos un array con las respuestas
 $respuestas = ["Sí", "No", "Quizás", "Claro que sí", "Por supuesto que no", "No lo tengo 
 claro", "Seguro", "Yo diría que sí", "Ni de coña"];
 
-$numeroRandom = rand(0, (count($respuestas)-1));
+$numeroRandom = rand(0, (count($respuestas)-1));//Generamos un numero aleatorio 
 
-echo "<h1>$pregunta</h1>";
+echo "<h1>$pregunta</h1>";//Mostamos la pregunta
 
-echo " $respuestas[$numeroRandom]";
+echo " $respuestas[$numeroRandom]";//Mostramos la respuesta aleatoria
 ?>

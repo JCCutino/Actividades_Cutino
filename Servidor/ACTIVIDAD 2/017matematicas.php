@@ -8,14 +8,14 @@ Para probar las funciones, haz uso tanto de paso de argumentos posicionales como
 */
 
 function digitos(int $num): int {
-    return strlen((string)$num);
+    return strlen((string)$num); //Creamos una funcion que te devuelve la longitud de un String
 }
 
-function digitoN(int $num, int $pos): int {
+function digitoN(int $num, int $pos): int { //Creamos una funcion que te devuelve el digito en x posicion
     $numString = (string)$num;
     
     if ($pos >= 1 && $pos <= strlen($numString)) {
-        return (int)$numString[$pos - 1];
+        return (int)$numString[$pos - 1]; //Devolvemos el digito en la posicion que el usuario indique
     } else {
         return -1; 
     }
@@ -23,19 +23,21 @@ function digitoN(int $num, int $pos): int {
 
 
 function quitaPorDetras(int $num, int $cant): int {
-    $numString = (string)$num;
+    $numString = (string)$num; 
     return (int)substr($numString, 0, -$cant);
+    //Usamos la funcion subString para obtener todos los caracteres menos los ultimos indicados
 }
 
 
 function quitaPorDelante(int $num, int $cant): int {
     $numString = (string)$num;
+    //Usamos la funcion subString para obtener todos los caracteres menos los primeros indicados
     return (int)substr($numString, $cant);
 }
 
-// Ejemplos de uso de las funciones
-$num = 123456789;
 
+$num = 123456789;
+//Llamamos a todas las funciones y las mostramos 
 echo "Cantidad de dígitos en $num: " . digitos($num) . "<br>";
 echo "Dígito en la posición 3 de $num: " . digitoN($num, 3) . "<br>";
 

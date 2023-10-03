@@ -9,4 +9,10 @@ print("<p>Esta es la segunda frase escrita con php</p>");
 ?>
 <?= "<p>Esta es la tercera frase escrita con php</p>"  
 
+/*
+Comentario de bloque
+*/
+
+//Comentario de linea
+
 ?>

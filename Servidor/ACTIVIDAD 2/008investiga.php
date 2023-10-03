@@ -6,7 +6,7 @@ echo "La instrucción match en PHP 8 es una forma más poderosa y expresiva de h
  
 $valor = 3;
 echo "<br>";
-$resultado = match ($valor) {
+$resultado = match ($valor) { //Creamos el match  y dependiendo del valor mostramos una cosa u otra
     1 => "Uno",
     2, 3, 4 => "Dos, Tres o Cuatro",
     5 => "Cinco",

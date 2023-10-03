@@ -4,6 +4,8 @@
 En el html crearemos el formulario para introducir los datos,
  y luego recogemos los datos y generamos la tabla en el segundo archivo.*/ 
 
+
+ //Recogemos todos los datos
 $nombre = $_POST['nombre'];
 $primerApellido = $_POST['primer_apellido'];
 $segundoApellido = $_POST['segundo_apellido'];
@@ -11,6 +13,8 @@ $email = $_POST['email'];
 $anoNacimiento = $_POST['ano_nacimiento'];
 $movil = $_POST['movil'];
 
+
+//Los mostramos en tabla
 echo "<table border=1> ";
 echo "<tr><th>Dato</th><th>Valor</th></tr>";
 echo "<tr><td>Nombre</td><td>$nombre</td></tr>";

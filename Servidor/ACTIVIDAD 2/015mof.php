@@ -7,17 +7,20 @@ almacenando el resultado en un array asociativo ['M' => 44, 'F' => 66]
 el resultado por pantalla. */
 
 $listavalores = [];
+$listaMoF = [1 => "M", 2 => "F"]; //Creamos un array asociativo con M o F
 
-$listaMoF = [ 1 => "M", 2 => "F"];
-$listaMoFInverssa =["M" => 0, "F" => 0];
-for ($i=1; $i <= 100; $i++) { 
-    $valorMoF = $listaMoF[rand(1,2)];
-    $listavalores = [ $i => $valorMoF ];
+
+for ($i = 1; $i <= 100; $i++) {
+    $valorMoF = $listaMoF[rand(1, 2)]; //En un bucle for de 1 a 100 vamos generando un valor aleatorio para introducir el 1 o 2 (M o F)
+    $listavalores[$i] = $valorMoF;
     echo "$i ";
     echo $listavalores[$i];
     echo "<br>";
 }
 
-print_r(array_count_values( $listavalores))
+$resultado = array_count_values($listavalores); //Usamos la funcion array_count_values para contar los valores
+
+echo "<br>";
+print_r($resultado); //Mostramos los resultados
 
 ?>

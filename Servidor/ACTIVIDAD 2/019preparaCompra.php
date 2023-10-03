@@ -5,8 +5,8 @@ y el pie (Tu supermercado de confianza) en ficheros externos y referenciando a e
 019listaCompra.php: recibe los datos del anterior, y reutiliza parte de 019imprimeTiquetCompra.php cambiando
  la tabla por una lista desordenada de los productos junto a su precio.
  */
- include '019encabezado.php';
-
+ include '019encabezado.php'; //Incluimos el encabezado
+ 
  if (isset($_GET['cantidad_productos'])) {
     $cantidad_productos = $_GET['cantidad_productos'];
  ?>
@@ -15,7 +15,7 @@ y el pie (Tu supermercado de confianza) en ficheros externos y referenciando a e
     <input type="hidden" name="cantidad_productos" value="<?php echo $cantidad_productos; ?>">
 
     <?php
-    // Generar campos para cada producto
+    // Generamos campos para cada producto
     for ($i = 1; $i <= $cantidad_productos; $i++) {
         echo "<label for='producto_nombre_$i'>Nombre del Producto $i:</label>";
         echo "<input type='text' name='producto_nombre_$i' required><br>";
@@ -33,4 +33,4 @@ y el pie (Tu supermercado de confianza) en ficheros externos y referenciando a e
 }
 ?>
 
-<?php include '019pie.php'; ?>
+<?php include '019pie.php';//Incluimos el pie ?>

@@ -22,7 +22,7 @@ if (isset($_GET['cantidad_productos'])) {
     }
     ?>
 
-    <input type="submit" value="Generar Tique">
+    <input type="submit" value="Generar Tiquet">
 </form>
 
 <?php

@@ -1,6 +1,7 @@
 <?php
 
-$longitudX= $_POST["longitudX"];
+$longitudX= $_POST["longitudX"];+
+
 $longitudY=  $_POST["longitudY"];
 
 echo "<table border=2> ";

@@ -23,3 +23,16 @@ Haz dos variantes de checkAge:
 
 Usando un operador de signo de interrogación ?
 Usando OR || */
+
+function checkAge2(age) {
+  return age>= 18 ? true : confirm("¿Tienes permisos de tus padres?");
+  
+}
+
+function checkAge3(age) {
+
+  return age>= 18 || confirm("¿Tienes permisos de tus padres?");
+}
+
+
+

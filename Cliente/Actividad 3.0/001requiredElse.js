@@ -20,4 +20,7 @@ function checkAge(age) {
   }
 
   //¿Funcionará la función de manera diferente si se borra else?
+
+
   //¿Hay alguna diferencia en el comportamiento de estas dos variantes?
+    //Si se borra el else solamente se mandará un true cuando la edad sea mayor que 18, pero no generará la pregunta de confirmación

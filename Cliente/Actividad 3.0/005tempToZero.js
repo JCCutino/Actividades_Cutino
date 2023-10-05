@@ -10,3 +10,34 @@ temporizador(77);      // le pasamos 77 segundos
 temporizador(2,50);   // le pasamos 2 minutos y 50 segundos
 
  */
+function temporizador(minutos, segundos) {
+    if (segundos === undefined) {
+        segundos = minutos;
+        minutos = 0;
+    }
+
+    if (typeof minutos !== 'number' || typeof segundos !== 'number' || minutos < 0 || segundos < 0) {
+        document.write("Tienes que poner números positivos");
+        return;
+    }
+
+    let tiempoTotal = minutos * 60 + segundos;
+
+    const intervalo = setInterval(function() {
+        let minutosRestantes = Math.floor(tiempoTotal / 60);
+        let segundosRestantes = tiempoTotal % 60;
+
+        document.write(`${minutosRestantes}:${segundosRestantes}<br>`);
+
+        tiempoTotal--;
+
+        if (tiempoTotal < 0) {
+            clearInterval(intervalo);
+            document.write("El tiempo ha terminado");
+        }
+    }, 1000);
+}
+
+temporizador(77);     
+
+

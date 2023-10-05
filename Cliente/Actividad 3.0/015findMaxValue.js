@@ -3,11 +3,13 @@
  el método reduce para devolver el valor más grande. Utilice las funciones flecha y no haga uso de if else.
  */
 
- let reduceArray = (array) => {
+ let findMaxValue = (array) => {
+  // El método reduce toma una función de reducción que compara el valor actual con el máximo y devuelve el máximo de ambos.
     return array.reduce((max, valor) => Math.max(max,valor));
   };
   
- 
+ //Creamos un array
   let numeros = [5, 9, 3, 4, 7];
-  let resultado = reduceArray(numeros);
+  //Llamamos a la funcion y mostramos el resultado
+  let resultado = findMaxValue(numeros);
   alert(resultado); 

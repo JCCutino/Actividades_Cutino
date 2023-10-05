@@ -13,9 +13,9 @@ min(3, -1) == -1
 min(1, 1) == 1 */
 
 function min(a,b) {
-
+//Usando el operador elvis devolvemos el numero menor
 return (a<b) ? a : b;
     
 }
-
+//Llamamos a la funcionm
 alert(min(3,-1));

@@ -24,15 +24,18 @@ Haz dos variantes de checkAge:
 Usando un operador de signo de interrogación ?
 Usando OR || */
 
-function checkAge2(age) {
+function checkAge2(age) { //Creamos la misma funcion pero usando el operador elvis
   return age>= 18 ? true : confirm("¿Tienes permisos de tus padres?");
   
 }
 
-function checkAge3(age) {
+function checkAge3(age) { //Aqui usamos el operador OR
 
   return age>= 18 || confirm("¿Tienes permisos de tus padres?");
 }
 
+checkAge2(16);
+
+checkAge3(16);
 
 

@@ -20,10 +20,10 @@ function ask(question, yes, no) {
   );*/
   
   let ask = (question, yes, no) => {
-    if (confirm(question)) yes();
-    else no();
+    if (confirm(question)) yes();//Ejecutamos yes si la respuesta es afirmativa.
+    else no(); //Ejecutamos no si la respuesta es negativa.
 };
-
+// Se llama a la función ask con la pregunta "Do you agree?" y dos funciones de flecha como argumentos.
 ask(
     "Do you agree?",
     () => { alert("You agreed."); },

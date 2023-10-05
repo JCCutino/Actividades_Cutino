@@ -5,25 +5,27 @@
  obtendremos "UnA KaDeNa kAnI Es kOmO EsTaHHH". Para ello, hay que alternar el uso
   de MAYÚSCULAS y minúsculas, sustituir la letra C por la K y añadir tres letras H al final.*/
 
-  function transformarACani(cadena) {
+function transformarACani(cadena) {
+    // Inicializamos una cadena vacía para almacenar el resultado de la transformación.
     let resultado = "";
-    let mayusculas = true; 
-
+    let mayusculas = true;
+    // Iteramos sobre cada letra de la cadena proporcionada.
     for (let i = 0; i < cadena.length; i++) {
         const letra = cadena[i];
-
+        // Si la letra es c, la reemplazamos con K.
         if (letra.toLowerCase() === 'c') {
             resultado += 'K';
         } else {
+            // Alternamos entre mayúsculas y minúsculas para cada letra no 'c'.
             resultado += mayusculas ? letra.toUpperCase() : letra.toLowerCase();
         }
-
+        // Cambiamos el estado de mayúsculas para la próxima iteración.
         mayusculas = !mayusculas;
     }
 
-
+    // Al final de la cadena, añadimos 'HHH'.
     resultado += 'HHH';
-
+    // Devolvemos la cadena transformada.
     return resultado;
 }
 

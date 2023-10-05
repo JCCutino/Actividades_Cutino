@@ -14,16 +14,17 @@ Cree una página web que solicite x y n, y luego muestre el resultado de pow(x,n
 Nota: La función solo debe admitir valores naturales de n: enteros desde 1.
 
 */
-let base = +prompt("Dame base");
+let base = +prompt("Dame base");//Pediomos la base
 
-let exponente =  +prompt("Dame base");
+let exponente =  +prompt("Dame exponente");//Pedimos el exponente
 
- let resultado = pow(base,exponente);
+ let resultado = pow(base,exponente); 
+  //Llamamos a la funcion
 
 
-function pow(base, exponente) {
+function pow(base, exponente) { //Creamos una funcion llamada pow
   let resultado =  Math.pow(base, exponente);
-
+//Usamos la funcion Math.pow para calcular la potencia
     return resultado;
 }
-alert(resultado);
+alert(resultado); //Mostamos el resultado

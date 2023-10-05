@@ -11,33 +11,34 @@ temporizador(2,50);   // le pasamos 2 minutos y 50 segundos
 
  */
 function temporizador(minutos, segundos) {
-    if (segundos === undefined) {
+    if (segundos === undefined) { // Verificamos si se proporcionó solo un parámetro
         segundos = minutos;
         minutos = 0;
     }
-
+    // Validamos los valores proporcionados
     if (typeof minutos !== 'number' || typeof segundos !== 'number' || minutos < 0 || segundos < 0) {
         document.write("Tienes que poner números positivos");
         return;
     }
-
+    // Calculamos el tiempo total en segundos
     let tiempoTotal = minutos * 60 + segundos;
-
-    const intervalo = setInterval(function() {
+    // Creamos el intervalo que muestra el temporizador cada segundo
+    const intervalo = setInterval(function () {
+        // Calculamos minutos y segundos restantes
         let minutosRestantes = Math.floor(tiempoTotal / 60);
         let segundosRestantes = tiempoTotal % 60;
-
+        // Mostramos el temporizador en consola
         document.write(`${minutosRestantes}:${segundosRestantes}<br>`);
-
+        // Reducimos el tiempo total
         tiempoTotal--;
-
+        // Verificamos si el temporizador llegó a cero
         if (tiempoTotal < 0) {
             clearInterval(intervalo);
             document.write("El tiempo ha terminado");
         }
-    }, 1000);
+    }, 1000); // Ejecutamos cada segundo
 }
 
-temporizador(77);     
+temporizador(77);
 
 

@@ -6,17 +6,14 @@ public function vaciarTelefonos(): void → Elimina todos los teléfonos
 */
 
 class Empleado {
-    protected string $nombre;
-    protected string $apellidos;
-    protected float $sueldo;
-    protected array $telefonos;
+   
 
-    public function __construct(string $nombre, string $apellidos, float $sueldo, array $telefonos) {
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->sueldo = $sueldo;
-        $this->telefonos = $telefonos;
-    }
+    public function __construct(
+        protected string $nombre, 
+        protected string $apellidos, 
+        protected float $sueldo, 
+        protected array $telefonos) 
+    {}
 
     public function anyadirTelefono(int $telefono): void {
         $this->telefonos[] = $telefono;

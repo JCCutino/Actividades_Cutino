@@ -43,7 +43,7 @@ class Empleado {
     }
 }
 
-// Ejemplo de uso
+
 $empleado1 = new Empleado("Juan", "Cutino Cortacero");
 echo "Nombre completo 1: " . $empleado1->getNombreCompleto() . "<br>";
 echo "Sueldo 1: " . $empleado1->getSueldo() . "<br>";

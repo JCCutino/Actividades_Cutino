@@ -1,41 +1,16 @@
 <?php
-/*Copia las clases del ejercicio anterior y modifícalas.
-Añade en Persona un atributo edad
-A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de 21 años y dependa del valor de su sueldo. Modifica todo el código necesario para mostrar y/o editar la edad cuando sea necesario.
-*/
-class Persona {
-   
 
-    public function __construct(
-        protected string $nombre, 
-        protected string $apellidos,
-        protected int $edad
-        ) {}
-
-    public function getNombreCompleto(): string {
-        return $this->nombre . " " . $this->apellidos;
-    }
-
-    public function getNombre(): string {
-        return $this->nombre;
-    }
-
-    public function getApellidos(): string {
-        return $this->apellidos;
-    }
-}
-
+require '008PersonaH.php';
 class Empleado extends Persona {
     protected static float $sueldoTope = 3333;
 
     public function __construct(
         protected string $nombre, 
-        protected string $apellidos,
-        protected int $edad,
+        protected string $apellidos, 
         protected float $sueldo = 1000, 
         protected array $telefonos = []
     ) {
-        parent::__construct($nombre, $apellidos, $edad);
+        parent::__construct($nombre, $apellidos);
         $this->sueldo = $sueldo;
         $this->telefonos = $telefonos;
     }
@@ -56,8 +31,7 @@ class Empleado extends Persona {
     
 
     public function comprobarImpuestos(): bool {
-      
-        return $this->sueldo > self::$sueldoTope && $this->edad >=21;
+        return $this->sueldo > self::$sueldoTope;
     }
 
 
@@ -108,16 +82,15 @@ class Empleado extends Persona {
 
 
 
-$empleado1 = new Empleado("Juan", "Cutino Cortacero", 20, 5000);
+$empleado1 = new Empleado("Juan", "Cutino Cortacero");
 echo Empleado::toHtml($empleado1);
 
-$empleado2 = new Empleado("Samuel", "Castro Barranca", 23, 2500, ["675382191", "657345987"]);
+$empleado2 = new Empleado("Samuel", "Castro Barranca", 2500, ["675382191", "657345987"]);
 
 Empleado::setSueldoTope(4327);
 echo Empleado::toHtml($empleado2);
 
-$persona1 = new Persona("Luis", "Verga Mayor", 19);
+$persona1 = new Persona("Luis", "Verga Mayor");
 
 echo Empleado::toHtml($persona1);
-
 ?>

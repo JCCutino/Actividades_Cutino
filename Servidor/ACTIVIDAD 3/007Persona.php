@@ -26,10 +26,10 @@ class Empleado extends Persona {
     protected static float $sueldoTope = 3333;
 
     public function __construct(
-        string $nombre, 
-        string $apellidos, 
-        float $sueldo = 1000, 
-        array $telefonos = []
+        protected string $nombre, 
+        protected string $apellidos, 
+        protected float $sueldo = 1000, 
+        protected array $telefonos = []
     ) {
         parent::__construct($nombre, $apellidos);
         $this->sueldo = $sueldo;

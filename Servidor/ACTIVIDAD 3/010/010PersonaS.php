@@ -4,4 +4,35 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 
 function public __toString(): string
 */
+
+class Persona {
+   
+
+    public function __construct(
+        protected string $nombre, 
+        protected string $apellidos,
+        protected int $edad
+        ) {}
+
+    public function getNombreCompleto(): string {
+        return $this->nombre . " " . $this->apellidos;
+    }
+
+    public function getNombre(): string {
+        return $this->nombre;
+    }
+
+    public function getApellidos(): string {
+        return $this->apellidos;
+    }
+
+    public function __toString(): string {
+        $info = "<p>";
+        $info .= "<strong>Nombre completo:</strong> " . $this->getNombreCompleto() . "<br>";
+        $info .= "<strong>Edad:</strong> " . $this->edad . "<br>";
+        $info .= "</p>";
+        return $info;
+    }
+}
+
 ?>

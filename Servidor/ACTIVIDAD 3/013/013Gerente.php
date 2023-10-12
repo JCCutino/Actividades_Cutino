@@ -1,5 +1,5 @@
 <?php
-require '012Trabajador.php';
+require_once '013Trabajador.php';
 
 
 class Gerente extends Trabajador {
@@ -22,9 +22,18 @@ class Gerente extends Trabajador {
         $sueldoIncrementado = $this->salarioBase + ($this->salarioBase * $porcentajeIncremento);
         return $sueldoIncrementado;
     }
+
+    public function toHtml(): string {
+        return parent::toHtml() . "<br>" . "Salario Base: ".$this->salarioBase . "<br>";
+    }
 }
 
 
 $gerente = new Gerente("Samuel", "Castro Barranca", 35, 5000);
+
+$html = $gerente->toHtml();
+
+echo $html;
+
 echo "Sueldo de Gerente: " . $gerente->calcularSueldo() . "€";
 ?>

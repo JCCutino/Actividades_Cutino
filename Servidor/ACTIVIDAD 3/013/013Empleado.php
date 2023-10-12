@@ -1,5 +1,5 @@
 <?php
-require '013Trabajador.php';
+require_once '013Trabajador.php';
 
 class Empleado extends Trabajador {
     protected float $sueldoPorHora;
@@ -21,11 +21,18 @@ class Empleado extends Trabajador {
     public function calcularSueldo(): float {
         return $this->sueldoPorHora * $this->horasTrabajadas;
     }
+
+    public function toHtml(): string {
+        return parent::toHtml() . "<br>" . "Sueldo por Hora: " . $this->sueldoPorHora . "<br>" . "Horas Trabajadas: " . $this->horasTrabajadas . "<br>";
+    }
 }
 
 
 $empleado = new Empleado("Juan", "Cutino Cortacero", 20, 17.5, 160);
+
+
+$html = $empleado->toHtml();
+
+echo $html;
 echo "Sueldo de Empleado: " . $empleado->calcularSueldo() . "€";
-
-
 ?>

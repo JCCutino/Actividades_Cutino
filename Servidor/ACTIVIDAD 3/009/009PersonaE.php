@@ -6,12 +6,13 @@ A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuand
 class Persona {
    
 
+    //Creamos un constructor par la clase Persona
     public function __construct(
         protected string $nombre, 
-        protected string $apellidos,
-        protected int $edad
+        protected string $apellidos
         ) {}
 
+        //Creamos los getters
     public function getNombreCompleto(): string {
         return $this->nombre . " " . $this->apellidos;
     }

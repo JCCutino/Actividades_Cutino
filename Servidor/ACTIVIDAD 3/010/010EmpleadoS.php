@@ -51,6 +51,7 @@ class Empleado extends Persona {
         return $this->telefonos;
     }
 
+    //Cambiamos el método para obtener los datos de todos los tabajadores heredando  de la clase  persona
     public function __toString(): string {
         $info = parent::__toString();
         $info .= "<p>";

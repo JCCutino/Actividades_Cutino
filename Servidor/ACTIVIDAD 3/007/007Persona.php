@@ -3,12 +3,13 @@
 
 class Persona {
    
-
+    //Creamos un constructor par la clase Persona
     public function __construct(
         protected string $nombre, 
         protected string $apellidos
         ) {}
 
+        //Creamos los getters
     public function getNombreCompleto(): string {
         return $this->nombre . " " . $this->apellidos;
     }

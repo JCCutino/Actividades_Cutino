@@ -7,7 +7,7 @@ function public __toString(): string
 
 class Persona {
    
-
+    //Creamos un constructor par la clase Persona
     public function __construct(
         protected string $nombre, 
         protected string $apellidos,
@@ -26,6 +26,7 @@ class Persona {
         return $this->apellidos;
     }
 
+    //Creamos un metodo para obtener los datos de persona
     public function __toString(): string {
         $info = "<p>";
         $info .= "<strong>Nombre completo:</strong> " . $this->getNombreCompleto() . "<br>";

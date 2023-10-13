@@ -3,7 +3,11 @@
 require '009PersonaE.php';
 
 class Empleado extends Persona {
+
+     //Creamos una variable estática para el sueldo topo
     protected static float $sueldoTope = 3333;
+
+    //Creamos un constructor con los atributos heredados de persona y tambien añadimos el atributo edad
 
     public function __construct(
         protected string $nombre, 
@@ -31,7 +35,7 @@ class Empleado extends Persona {
     }
 
     
-
+    //Creamos un metodo para comprobar si el usuario tiene que pagar impuestos basado en el sueldo tope y su edad
     public function comprobarImpuestos(): bool {
       
         return $this->sueldo > self::$sueldoTope && $this->edad >=21;
@@ -56,6 +60,7 @@ class Empleado extends Persona {
         return $this->telefonos;
        }
 
+        // Método estático para convertir la información de un empleado a formato HTML
         public static function toHtml(Persona $p): string {
 
             if ($p instanceof Empleado) {
@@ -77,22 +82,24 @@ class Empleado extends Persona {
             $info .= "</p>";
             return $info;
         }
-        return "";
+        return ""; 
         }
     }
 
     
 
-
+ //Creamos 2 empleados
 
 $empleado1 = new Empleado("Juan", "Cutino Cortacero", 20, 5000);
 echo Empleado::toHtml($empleado1);
 
 $empleado2 = new Empleado("Samuel", "Castro Barranca", 23, 2500, ["675382191", "657345987"]);
 
+//Cambiamos el sueldo tope
 Empleado::setSueldoTope(4327);
 echo Empleado::toHtml($empleado2);
 
+//Creamos una persona
 $persona1 = new Persona("Luis", "Verga Mayor", 19);
 
 echo Empleado::toHtml($persona1);

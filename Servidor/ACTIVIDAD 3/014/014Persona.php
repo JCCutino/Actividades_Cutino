@@ -1,6 +1,8 @@
 <?php
 
-abstract class Persona {
+require_once 'JSerializable.php';
+
+abstract class Persona implements JSerializable {
     public function __construct(
         protected string $nombre, 
         protected string $apellidos,
@@ -19,6 +21,16 @@ abstract class Persona {
         return $this->apellidos;
     }
 
+    public function toJSON(): string {
+        foreach ($this as $clave => $valor) {
+            $mapa->$clave = $valor;
+        }
+        return json_encode($mapa);
+    }
+
+    public function toSerialize(): string {
+        return serialize($this);
+    }
 }
 
 ?>

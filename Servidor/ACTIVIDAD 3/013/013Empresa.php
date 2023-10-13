@@ -11,16 +11,15 @@ public function getCosteNominas(): float -> recorre los trabajadores e invoca al
 
 require_once '013Empleado.php';
 require_once '013Gerente.php';
-
+//Creamos una clase Empresa
 class Empresa {
-    private string $nombre;
-    private string $direccion;
-    private array $trabajadores = [];
-
-    public function __construct(string $nombre, string $direccion) {
-        $this->nombre = $nombre;
-        $this->direccion = $direccion;
-    }
+ 
+    protected array $trabajadores = [];
+    //Creamos un constructor para la clase empresa
+    public function __construct(
+       protected string $nombre, 
+       protected string $direccion) 
+    {}
 
    
     public function getNombre(): string {
@@ -53,7 +52,7 @@ class Empresa {
         return $html;
     }
 
-    
+    //Creamos una funcion para obtener todos los costes de las nóminas 
     public function getCosteNominas(): float {
         $costeTotal = 0.0;
         foreach ($this->trabajadores as $trabajador) {
@@ -63,15 +62,17 @@ class Empresa {
     }
 }
 
-
+//Creamos la empresa, el empleado y el gerente
 $empresa = new Empresa("Red Royal", "Calle Falsa 123");
 
 $empleado = new Empleado("Juan", "Cutiño", 20, 15.0, 160);
 $gerente = new Gerente("Samuel", "Castro", 35, 3000);
 
+//Añadimos los trabajadores a las empresas
 $empresa->anyadirTrabajador($empleado);
 $empresa->anyadirTrabajador($gerente);
 
+//Mostramos todos los datos
 echo "<br> Nombre de la empresa: " . $empresa->getNombre() . "<br>";
 echo "Dirección de la empresa: " . $empresa->getDireccion() . "<br>";
 

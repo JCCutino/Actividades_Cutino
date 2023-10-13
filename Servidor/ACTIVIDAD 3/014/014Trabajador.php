@@ -1,6 +1,8 @@
 <?php
 require_once '014Persona.php';
 require_once 'JSerializable.php';
+
+//Creamos una clase abstracta trabajador que sea hija de Persona y tambien obtenga los JSerializable
 abstract class Trabajador extends Persona implements JSerializable {
     protected static float $sueldoTope = 3333;
 

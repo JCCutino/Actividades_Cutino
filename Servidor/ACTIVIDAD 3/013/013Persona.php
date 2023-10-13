@@ -1,5 +1,5 @@
 <?php
-
+//Creamos una clase abstracta
 abstract class Persona {
     public function __construct(
         protected string $nombre, 

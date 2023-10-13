@@ -4,15 +4,14 @@
 require '010PersonaS.php';
 class Empleado extends Persona {
     protected static float $sueldoTope = 3333;
-    protected float $sueldo;
-    protected array $telefonos;
+    
 
     public function __construct(
-        string $nombre,
-        string $apellidos,
-        int $edad,
-        float $sueldo = 1000,
-        array $telefonos = []
+        protected string $nombre,
+        protected string $apellidos,
+        protected int $edad,
+        protected float $sueldo = 1000,
+        protected array $telefonos = []
     ) {
         parent::__construct($nombre, $apellidos, $edad);
         $this->sueldo = $sueldo;

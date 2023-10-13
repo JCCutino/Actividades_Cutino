@@ -1,23 +1,22 @@
 <?php
-require '013Trabajador.php';
-
+require '012Trabajador.php';
+//Creamos una clase Empleado hija de Trabajador
 class Empleado extends Trabajador {
-    protected float $sueldoPorHora;
-    protected int $horasTrabajadas;
-
+    
+ //Creamos un constructor heredando los atributos
     public function __construct(
-        string $nombre,
-        string $apellidos,
-        int $edad,
-        float $sueldoPorHora,
-        int $horasTrabajadas,
-        array $telefonos = []
+        protected string $nombre,
+        protected string $apellidos,
+        protected int $edad,
+        protected float $sueldoPorHora,
+        protected int $horasTrabajadas,
+        protected array $telefonos = []
     ) {
         parent::__construct($nombre, $apellidos, $edad, $telefonos);
         $this->sueldoPorHora = $sueldoPorHora;
         $this->horasTrabajadas = $horasTrabajadas;
     }
-
+//Creamos una funcion para calcular el sueldo del empleado 
     public function calcularSueldo(): float {
         return $this->sueldoPorHora * $this->horasTrabajadas;
     }

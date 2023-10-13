@@ -1,10 +1,10 @@
 <?php
 require_once '013Trabajador.php';
 
-
+//Creamos una clase Gerente hija de Trabajador
 class Gerente extends Trabajador {
     protected float $salarioBase;
-
+    //Creamos un constructor heredando los atributos
     public function __construct(
         string $nombre,
         string $apellidos,
@@ -15,19 +15,19 @@ class Gerente extends Trabajador {
         parent::__construct($nombre, $apellidos, $edad, $telefonos);
         $this->salarioBase = $salarioBase;
     }
-
+//Creamos una funcion para calcular el sueldo del gerente 
     public function calcularSueldo(): float {
         
         $porcentajeIncremento = $this->edad * 0.01;
         $sueldoIncrementado = $this->salarioBase + ($this->salarioBase * $porcentajeIncremento);
         return $sueldoIncrementado;
     }
-
+    //Creamos la funcion para mostrar todos los datos del gerente
     public function toHtml(): string {
         return parent::toHtml() . "<br>" . "Salario Base: ".$this->salarioBase . "<br>";
     }
 }
-
+//Creamos y mostramos los datos del gerente
 
 $gerente = new Gerente("Samuel", "Castro Barranca", 35, 5000);
 

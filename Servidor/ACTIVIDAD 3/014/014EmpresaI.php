@@ -19,15 +19,16 @@ Modifica todas las clases que no son abstractas para que implementen el interfaz
 require_once 'JSerializable.php';
 require_once '014Empleado.php';
 require_once '014Gerente.php';
-class Empresa implements JSerializable {
-    private string $nombre;
-    private string $direccion;
-    private array $trabajadores = [];
 
-    public function __construct(string $nombre, string $direccion) {
-        $this->nombre = $nombre;
-        $this->direccion = $direccion;
-    }
+//Creamos la clase empresa
+class Empresa implements JSerializable {
+    
+    protected array $trabajadores = [];
+
+    public function __construct(
+        protected string $nombre, 
+        protected string $direccion) 
+    { }
 
     public function getNombre(): string {
         return $this->nombre;
@@ -49,6 +50,7 @@ class Empresa implements JSerializable {
         $this->trabajadores[] = $trabajador;
     }
 
+    //Creamos una funcion para mostrar todos los trabajadores
     public function listarTrabajadoresHtml(): string {
         $html = '<ul>';
         foreach ($this->trabajadores as $trabajador) {
@@ -58,6 +60,7 @@ class Empresa implements JSerializable {
         return $html;
     }
 
+    //Creamos una funcion para obtener todo el coste de las nominas
     public function getCosteNominas(): float {
         $costeTotal = 0.0;
         foreach ($this->trabajadores as $trabajador) {
@@ -66,6 +69,7 @@ class Empresa implements JSerializable {
         return $costeTotal;
     }
 
+    //Creamos una funcion para pasar los datos a Json
     public function toJSON(): string {
         $mapa = [];
         foreach ($this as $clave => $valor) {
@@ -77,7 +81,7 @@ class Empresa implements JSerializable {
         }
         return json_encode($mapa);
     }
-
+//Creamos una funcion recursiva para convertir el objeto en un array
     private function convertirObjetoAArray($objeto): array {
         $array = [];
         foreach ($objeto as $clave => $valor) {
@@ -103,6 +107,7 @@ $gerente = new Gerente("Samuel", "Castro", 35, 3000);
 $empresa->anyadirTrabajador($empleado);
 $empresa->anyadirTrabajador($gerente);
 
+//Mostramos todos los datos
 echo "Datos de la empresa en JSON: " . $empresa->toJSON() . "<br>";
 echo "Datos de la empresa serializados: " . $empresa->toSerialize() . "<br>";
 

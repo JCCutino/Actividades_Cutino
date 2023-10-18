@@ -1,0 +1,15 @@
+#1.- Devuelve todos los datos del alumno más joven.
+
+#2.- Devuelve un listado con los profesores que no están asociados a un departamento.
+
+
+#3.- Devuelve un listado con los departamentos que no tienen profesores asociados.
+
+
+#4.- Devuelve un listado con los profesores que tienen un departamento asociado y que no imparten ninguna asignatura.
+
+
+#5.- Devuelve un listado con las asignaturas que no tienen un profesor asignado.
+
+
+#6.- Devuelve un listado con todos los departamentos que no han impartido asignaturas en ningún curso escolar

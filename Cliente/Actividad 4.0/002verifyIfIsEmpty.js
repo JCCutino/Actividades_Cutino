@@ -5,3 +5,20 @@ alert( isEmpty(schedule) ); // true
 schedule["8:30"] = "Hora de levantarse";
 alert( isEmpty(schedule) ); // false
 */
+
+function isEmpty(obj) {
+for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          return false;
+        }
+      }
+      return true;
+}
+
+let schedule = {};
+
+alert( isEmpty(schedule) );
+
+schedule["8:30"] = "Hora de levantarse";
+
+alert( isEmpty(schedule) );

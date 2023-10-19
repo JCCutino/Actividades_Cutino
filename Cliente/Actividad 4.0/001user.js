@@ -6,3 +6,13 @@ Agrega la propiedad surname con el valor Sam Sagaz.
 Cambia el valor de name a Peter Pan.
 Quita la propiedad name del objeto.
  */
+
+let user = {};
+
+user.name = "John Snow";
+
+user.surname = "Sam Sagaz";
+
+user.name = "Peter Pan";
+
+delete user.name;

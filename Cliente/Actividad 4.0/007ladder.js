@@ -30,13 +30,13 @@ let ladder = {
     step: 0,
     up() {
       this.step++;
-      return this;
+      return this; //EL cambio que hemos tenido que realizar es añadir un return a cada metodo, para que así el siguiente metodo pueda seguir teniendo un valor para ejecutarse
     },
     down() {
       this.step--;
       return this;
     },
-    showStep: function() { // muestra el peldaño actual
+    showStep: function() {
       alert( this.step );
       return this;
     }

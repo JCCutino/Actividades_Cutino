@@ -19,28 +19,28 @@ Nota que multiplyNumeric no necesita devolver nada. Debe modificar el objeto en 
 P.D. Usa typeof para verificar si hay un número aquí.
  */
 
-let menu = {
+let menu = { //Creamos un objeto 
     width: 200,
     height: 300,
     title: "Mi menú"
   };
 
-  function multiplyNumeric(obj) {
+  function multiplyNumeric(obj) { //Creamos una funcion que multiplica los valores numéricos
     
-    for (const key in obj) {
+    for (const key in obj) { //Recorremos el objeto
     
         if (typeof obj[key] === 'number') {
-            obj[key] = obj[key]*2;
+            obj[key] = obj[key]*2; //Si es de tipo numérico lo multiplicamos por 2
         }
           
         }
     }
 
-multiplyNumeric(menu)
+multiplyNumeric(menu) //Llamamos a la función
 
     for (const key in menu) {
       
-    alert(menu[key]);
+    alert(menu[key]); //Mostramos el objeto
         
     }
   

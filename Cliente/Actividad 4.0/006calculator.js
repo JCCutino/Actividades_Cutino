@@ -11,22 +11,22 @@ alert( calculator.sum() );
 alert( calculator.mul() );
  */
 
-let calculator = {
+let calculator = { //Creamos un objeto
     a: 0,
     b: 0,
-    read: function() {
+    read: function() { //Creamos un metodo que pide 2 valores al usuario
       this.a = parseFloat(prompt('Introduce el primer valor:'));
       this.b = parseFloat(prompt('Introduce el segundo valor:'));
     },
-    sum: function() {
+    sum: function() { //Creamos un metodo que suma los 2 valores
       return this.a + this.b;
     },
-    mul: function() {
+    mul: function() { //Creamos un metodo que multiplica los 2 valores
       return this.a * this.b;
     }
   };
   
-  calculator.read();
+  calculator.read(); //Llamamos a los metodos
   alert('La suma es: ' + calculator.sum());
   alert('La multiplicación es: ' + calculator.mul());
   

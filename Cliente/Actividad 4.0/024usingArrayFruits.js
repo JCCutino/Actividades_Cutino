@@ -8,3 +8,27 @@ var fruits = ["Banana", "Manzana", "Fresa"];
 //Eliminamos el último elemento.
 //Mostrar cada elemento con for of o for in, lo que considere más adecuado.
  */
+
+var fruits = ["Banana", "Manzana", "Fresa"];
+
+// Añadimos "Cereza" al principio
+fruits.unshift("Cereza");
+
+// Añadimos "Melocotón" al final
+fruits.push("Melocotón");
+
+// Mostrar el array elemento a elemento con for clásico
+for (let i = 0; i < fruits.length; i++) {
+  alert(fruits[i]);
+}
+
+// Eliminamos el primer elemento
+fruits.shift();
+
+// Eliminamos el último elemento
+fruits.pop();
+
+// Mostrar cada elemento con for...of
+for (const fruta of fruits) {
+  alert(fruta);
+}

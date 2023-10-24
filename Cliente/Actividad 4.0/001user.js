@@ -7,12 +7,12 @@ Cambia el valor de name a Peter Pan.
 Quita la propiedad name del objeto.
  */
 
-let user = {};
+let user = {}; // Creamos un objeto vacio
 
-user.name = "John Snow";
+user.name = "John Snow"; //Asignamos la propiedad name y surname
 
 user.surname = "Sam Sagaz";
 
-user.name = "Peter Pan";
+user.name = "Peter Pan"; //Reasignamos la propiedad name
 
-delete user.name;
+delete user.name;  //Eliminamos la propiedad name

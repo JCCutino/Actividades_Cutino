@@ -6,19 +6,19 @@ schedule["8:30"] = "Hora de levantarse";
 alert( isEmpty(schedule) ); // false
 */
 
-function isEmpty(obj) {
-for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
+function isEmpty(obj) { //Creamos la funcion
+for (let key in obj) { //Recorremos el objeto
+        if (obj.hasOwnProperty(key)) {//Comprobamos si el objeto tiene propiedades
           return false;
         }
       }
       return true;
 }
 
-let schedule = {};
+let schedule = {}; //Creamos un objeto vacio
 
-alert( isEmpty(schedule) );
+alert( isEmpty(schedule) ); //Usamos la funcion que devuelve true si el objeto está vacio
 
-schedule["8:30"] = "Hora de levantarse";
+schedule["8:30"] = "Hora de levantarse"; //Le asignamos una propiedad
 
-alert( isEmpty(schedule) );
+alert( isEmpty(schedule) );//Volvemos u usar la funcion

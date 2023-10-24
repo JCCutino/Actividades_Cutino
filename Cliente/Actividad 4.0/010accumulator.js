@@ -9,3 +9,21 @@ accumulator.read(); // agrega el valor introducido por el usuario
 accumulator.read(); // agrega el valor introducido por el usuario
 alert(accumulator.value); // muestra la suma de estos valores
 */
+
+
+
+function Accumulator(valor) { //Creamos la funcion con un valor inicial
+    this.value = valor; //Asiganamos el valor inicial a value
+
+    this.read = function() { //Creamos un metodo para que el usuario introduzca un valor y se sume
+        this.a = +(prompt('Introduce un valor:'));
+        this.value = this.value + this.a;
+    };
+}
+
+
+
+let accumulador = new Accumulator(1); // valor inicial 1
+accumulador.read(); // agrega el valor introducido por el usuario
+accumulador.read(); // agrega el valor introducido por el usuario
+alert(accumulador.value); // muestra la suma de estos valores

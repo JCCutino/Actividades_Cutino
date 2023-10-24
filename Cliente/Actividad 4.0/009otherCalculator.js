@@ -8,4 +8,24 @@ let calculator = new Calculator();
 calculator.read();
 alert( "Sum=" + calculator.sum() );
 alert( "Mul=" + calculator.mul() );
- */
+*/
+
+function Calculadora(){//Creamos una funcion 
+
+        this.read = function() { //Creamos un metodo que pide 2 valores al usuario
+          this.a = parseFloat(prompt('Introduce el primer valor:'));
+          this.b = parseFloat(prompt('Introduce el segundo valor:'));
+        },
+        this.sum = function() { //Creamos un metodo que suma los 2 valores
+          return this.a + this.b;
+        },
+        this.mul = function() { //Creamos un metodo que multiplica los 2 valores
+          return this.a * this.b;
+        
+      };
+
+}
+let calculator = new Calculadora();
+calculator.read();
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );

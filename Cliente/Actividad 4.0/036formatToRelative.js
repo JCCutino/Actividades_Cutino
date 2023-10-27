@@ -15,44 +15,46 @@ function formatDate(date) {
     let segundos = ahora - date; //Calculamos la diferencia en milisegundos
    segundos =  Math.round(segundos / 1000); //Redondeamos
 
-   if (segundos === 0) {
+   if (segundos === 0) { //Si los segundos son iguales a 0 mostramos ahora mismo
     diferencia = "ahora mismo";
     return diferencia;
-   }else if(segundos<60 && segundos>1) {
+   }else if(segundos<60 && segundos>1) { //Si el tiempo es entre 1 y 60 segundos mostramos hace cuanto fue
     diferencia = "Hace "+segundos+" seg,";
     return diferencia;
-   }else if (segundos>60 && segundos<3600) {
+   }else if (segundos>60 && segundos<3600) { //Si el tiempo es entre 1 minuto y 60 minutos mostramos hace cuanto fue 
    let minutos = Math.round(segundos/60);
     diferencia = "Hace " + minutos+ "min.";
     return diferencia;
-   }else{
+   }else{//Convertimos todos los datos a String
     let dia = String(date.getDate());
     let mes = String(date.getMonth() + 1); // Sumamos 1 porque los meses van de 0 a 11
     let año = String(date.getFullYear()).slice(2); // Tomamos los últimos dos dígitos del año
-    let horas = String(date.getHours());
+    let horas = String(date.getHours()); 
     let minutos = String(date.getMinutes());
-
-    return dia + '.' + mes + '.' + año + ' ' + horas + ':' + minutos;
+    diferencia = dia + '.' + mes + '.' + año + ' ' + horas + ':' + minutos; //Concatenamos los datos
+    return diferencia;
 }
    }
 
-
+//Cogemos la fecha actual
 let fecha = new Date();
 
 alert(formatDate(fecha));
 
-
+//Cogemos los segundos de la fecha
 let segundos = fecha.getTime();
 let segundosResta = 6000;
+//Restamos 6 segundos
 let fecha2 = new Date(segundos-segundosResta);
 
 alert(formatDate(fecha2));
 
 segundosResta= segundosResta * 60;
+//Restamos  6 minutos( 6000ms * 60)
 let fecha3 = new Date(segundos-segundosResta);
 
 alert(formatDate(fecha3));
-
-let fecha4 = new Date("2023-10-25T12:00:03");
+//Creamos una nueva fecha
+let fecha4 = new Date("2023-10-25T12:05:04");
 
 alert(formatDate(fecha4));

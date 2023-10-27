@@ -54,3 +54,12 @@ const cocodrilo = disney.find(personaje => personaje.nombre === "Cocodrilo");
 console.log("Cocodrilo:", cocodrilo);
 
 //Escribe la función shuffle(array) que baraje (reordene de forma aleatoria) los elementos del array.y.
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+shuffle(disney);
+console.log(disney);

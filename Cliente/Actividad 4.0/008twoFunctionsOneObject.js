@@ -8,3 +8,5 @@ let b = new B();
 alert( a == b ); // true
 Si es posible, entonces proporcione un ejemplo de código.
 */
+
+//No es posible crear las fuciones para que estas 2 den lo mismo al compararlas, ya que son 2 funciones diferentes

@@ -5,14 +5,14 @@ Para esta actividad asumimos que cada id es único. No existen dos elementos del
 Usa el método de array .reduce en la solución.
  */
 function groupById(arr) {
-let resultado = arr.reduce((acumulador, personaje) =>{
-    acumulador[personaje.id]= personaje;
+let resultado = arr.reduce((acumulador, personaje) =>{ //Almacenamos en un objeto vacio los objetos agrupados
+    acumulador[personaje.id]= personaje; //Utilizamos la propiedad id para el acumulador
     return acumulador;
 }, {});
-return resultado
+return resultado //Devolvemos el objeto
   }
 
-  const personajes = [
+  const personajes = [ //Creamos un array de obejtos de peliculas 
     { id: 1, nombre: "Norman", pelicula: "ParaNorman" },
     { id: 2, nombre: "Doctor Strange", pelicula: "Doctor Strange" },
     { id: 3, nombre: "Harry Potter", pelicula: "Harry Potter" }

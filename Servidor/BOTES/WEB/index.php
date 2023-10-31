@@ -1,5 +1,5 @@
 <?php
-include_once("conexion.php");
+include_once('consultas.php')
 ?>
 <!doctype html>
 <html lang="en">
@@ -48,6 +48,25 @@ include_once("conexion.php");
     </nav>
   </header>
   <main>
+
+  <h1>Batalla de Guadalcanal</h1>
+    <?php
+echo listarBatallaGuadalcanal($conn);
+?>
+
+
+<h1>Paises con Acorazados y cruceres</h1>
+<?php
+echo encontrarPaisesConAcorazadosYCruceros($conn);
+?>
+<h1>Batallas con 3 barcos del mismo pais</h1>
+<?php
+echo encontrarBatallasConTresBarcosDelMismoPais($conn);
+?>
+<h1>Pais con mas cañones</h1>
+<?php
+echo encontrarPaisesConMasCaniones($conn);
+?>
 
   </main>
   <footer>

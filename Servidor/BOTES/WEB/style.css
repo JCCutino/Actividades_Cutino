@@ -1,5 +1,73 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('Tipografia/Avenir_LT_Std_35_Light_Oblique.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Avenir', Arial, sans-serif;
+}
+
 .navbar .navbar-nav {
     display: flex;
     align-items: center;
     height: 100%;
   }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #0d3b66; 
+  color: #fff; 
+}
+
+table, th, td {
+  border: 1px solid #17475d; 
+}
+
+
+th {
+  background-color: #13627d; 
+}
+
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #0d3b66; 
+}
+
+tr:hover {
+  background-color: #17475d; 
+}
+
+div.table-container {
+  overflow-x: auto;
+}
+
+
+@media (max-width: 768px) {
+  table {
+      font-size: 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  table, th, td {
+      border: none;
+  }
+}
+
+
+section img {
+  max-width: 100%; 
+  height: auto; 
+}

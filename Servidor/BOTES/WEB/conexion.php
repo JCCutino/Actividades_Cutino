@@ -14,8 +14,6 @@ if ($conn->connect_error) {
     echo("Conexión fallida: " . $conn->connect_error);
 }
 
-echo("Conexión exitosa");
-echo("<br>");
 
 
 

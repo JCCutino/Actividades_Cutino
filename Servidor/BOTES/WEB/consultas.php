@@ -72,11 +72,12 @@ function encontrarPaisesConAcorazadosYCruceros($conexion) {
 
 function encontrarBatallasConTresBarcosDelMismoPais($conexion) {
    
-    $sql = "SELECT R.NOMBRE_BATALLA, R.NOMBRE_BARCO, C.PAIS, COUNT(*) AS CantidadBarcos
-            FROM RESULTADOS AS R
-            INNER JOIN CLASES AS C ON R.NOMBRE_BARCO = C.CLASE
-            GROUP BY R.NOMBRE_BATALLA, C.PAIS
-            HAVING CantidadBarcos >= 3";
+    $sql = "SELECT R.NOMBRE_BATALLA, C.PAIS, COUNT(*) AS NUMERO_DE_BARCOS
+    FROM CLASES AS C
+    JOIN RESULTADOS AS R ON C.CLASE = (SELECT CLASE FROM BARCO_CLASE WHERE NOMBRE_BARCO = R.NOMBRE_BARCO)
+    GROUP BY R.NOMBRE_BATALLA, C.PAIS
+    HAVING COUNT(*) >= 3";
+            
 
 
     
@@ -86,16 +87,14 @@ function encontrarBatallasConTresBarcosDelMismoPais($conexion) {
     $tablaHTML = "<table border='2'>
                     <tr>
                         <th>Nombre de la Batalla</th>
-                        <th>Nombre del Barco</th>
                         <th>País</th>
                         <th>Cantidad de Barcos</th>
                     </tr>";
     foreach ($resultado as $fila) {
         $tablaHTML .= "<tr>
                         <td>".$fila['NOMBRE_BATALLA']."</td>
-                        <td>".$fila['NOMBRE_BARCO']."</td>
                         <td>".$fila['PAIS']."</td>
-                        <td>".$fila['CantidadBarcos']."</td>
+                        <td>".$fila['NUMERO_DE_BARCOS']."</td>
                     </tr>";
     }
     $tablaHTML .= "</table>";
@@ -103,7 +102,9 @@ function encontrarBatallasConTresBarcosDelMismoPais($conexion) {
 
 
     return $tablaHTML;
+    
 }
+
 
 function encontrarPaisesConMasCaniones($conexion) {
    
@@ -135,7 +136,33 @@ function encontrarPaisesConMasCaniones($conexion) {
 }
 
 
+function encontrarBatallaClaseKongo($conexion) {
+   
+    $sql = "SELECT DISTINCT RESULTADOS.NOMBRE_BATALLA
+    FROM RESULTADOS
+    INNER JOIN BARCO_CLASE ON RESULTADOS.NOMBRE_BARCO = BARCO_CLASE.NOMBRE_BARCO
+    INNER JOIN CLASES ON BARCO_CLASE.CLASE = CLASES.CLASE
+    WHERE CLASES.CLASE = 'KONGO'";
 
+   
+    $resultado = $conexion->query($sql);
+
+    
+    $tablaHTML = "<table border='1'>
+                    <tr>
+                        <th>Nombre Batalla</th>
+                    </tr>";
+    foreach ($resultado as $fila) {
+        $tablaHTML .= "<tr>
+                        <td>".$fila['NOMBRE_BATALLA']."</td>
+                    </tr>";
+    }
+    $tablaHTML .= "</table>";
+
+
+
+    return $tablaHTML;
+}
 
 
 ?>

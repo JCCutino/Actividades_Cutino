@@ -6,11 +6,11 @@ include_once('consultas.php')
 
 <head>
   <title>BOTES SA</title>
-  <!-- Required meta tags -->
+ 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS v5.2.1 -->
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -20,14 +20,14 @@ include_once('consultas.php')
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <!-- Botón hamburguesa para dispositivos pequeños, alineado a la izquierda -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <h2 class="title nav-item">BARCOS SA</h2>
         <a class="navbar-item" href="#"><img src="Imagenes/Logotipo e Iconos/bitmap.svg" alt="Logo" width="100">
 
-        <!-- Elementos de navegación -->
+        
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -110,7 +110,7 @@ include_once('consultas.php')
         <h1>Barcos de Clase Kongo</h1>
         <hr>
         <p>Los barcos de Clase Kongo fueron una serie de cuatro acorazados de la Armada Imperial Japonesa que sirvieron en la primera mitad del siglo XX. Nombrados en honor a las montañas Kongo, estos acorazados destacaron por su velocidad y potencia de fuego. Durante su servicio, participaron en diversas operaciones, incluyendo la Primera Guerra Mundial y la Segunda Guerra Mundial. Los Clase Kongo representaron una parte significativa de la flota naval japonesa en un período de cambios e innovaciones en la guerra naval.</p>
-        
+       <?php echo encontrarBatallaClaseKongo($conn);?>
     </div>
     </div>
   </main>

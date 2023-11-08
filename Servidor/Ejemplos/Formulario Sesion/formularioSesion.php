@@ -2,7 +2,7 @@
 session_start(); 
 
 if (isset($_SESSION['sesion_creada'])) {
-    $mensaje = 'La sesión ha sido creada';
+    $mensaje = 'Bienvenido ' .$_SESSION['nombre'];
 } else if (isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['correo']) && isset($_POST['contrasena'])) {
   
     if (!empty($_POST['nombre']) && !empty($_POST['apellidos']) && !empty($_POST['correo']) && !empty($_POST['contrasena'])) {

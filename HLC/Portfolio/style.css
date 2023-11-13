@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+ }
+ 
+ .barra-vertical-1 {
+    background-color: purple;
+    width: 5px; /* ajusta el ancho según tus preferencias */
+    height: 120px; /* ocupa toda la altura de la ventana */
+    position: fixed;
+    left: 10px;
+    top: 30px;
+ }
+ .barra-vertical-2 {
+    background-color: purple;
+    width: 5px; /* ajusta el ancho según tus preferencias */
+    height: 120px; /* ocupa toda la altura de la ventana */
+    position: fixed;
+    left: 10px;
+    
+ }
+ /* Estilos para las ramas horizontales */
+ .rama-horizontal {
+    background-color: purple;
+    position: absolute;
+    top: 29px;
+    left: -10px; /* posición con respecto a la barra vertical */
+    height: 5px;
+    width: 40px; /* ajusta la longitud de la rama */
+ }
+ 
+ .circulo {
+    border: 5px solid purple; /* borde del círculo */
+    background-color: transparent; /* relleno transparente */
+    border-radius: 50%; /* para dar forma circular al círculo */
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -8.1px;
+    left: 39px; /* ajusta la posición horizontal del círculo */
+}
+ 
+ .contenido{
+    margin-left: 30px;
+}
+
+ .seccion {
+    margin-left: 20px; /* para dejar espacio a la izquierda de la barra */
+    padding: 20px;
+    position: relative; /* para que las ramas horizontales sean posicionadas correctamente */
+ }
+ 

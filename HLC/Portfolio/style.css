@@ -1,52 +1,117 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #0f041d;
+    color: #FFFFFF;
  }
  
+ @media (min-width: 992px) {
+   .logo-lg {
+     display: block;
+   }
+   .logo-sm {
+     display: none;
+   }
+ }
+
+ @media (max-width: 991px) {
+   .logo-lg {
+     display: none;
+   }
+   .logo-sm {
+     display: block;
+   }
+ }
+ 
+
+    .navbar {
+      background-color: #1A0B2E; /* Puedes cambiar el código de color a tu gusto */
+    }
+
+    
+    .navbar-nav .nav-link {
+      color: #ffffff; /* Puedes cambiar el código de color a tu gusto */
+    }
+
  .barra-vertical-1 {
-    background-color: purple;
-    width: 5px; /* ajusta el ancho según tus preferencias */
-    height: 120px; /* ocupa toda la altura de la ventana */
+    background-color: #693B93;
+    width: 5px;
+    height: 120px; 
     position: fixed;
     left: 10px;
-    top: 30px;
+margin-top: 10px;
  }
  .barra-vertical-2 {
-    background-color: purple;
-    width: 5px; /* ajusta el ancho según tus preferencias */
-    height: 120px; /* ocupa toda la altura de la ventana */
+    background-color: #693B93;
+    width: 5px;
+    height: 120px; 
     position: fixed;
     left: 10px;
     
  }
- /* Estilos para las ramas horizontales */
+
  .rama-horizontal {
-    background-color: purple;
+    background-color: #693B93;
     position: absolute;
     top: 29px;
-    left: -10px; /* posición con respecto a la barra vertical */
+    left: -10px; 
     height: 5px;
-    width: 40px; /* ajusta la longitud de la rama */
+    width: 40px; 
  }
  
  .circulo {
-    border: 5px solid purple; /* borde del círculo */
-    background-color: transparent; /* relleno transparente */
-    border-radius: 50%; /* para dar forma circular al círculo */
+    border: 5px solid #693B93; 
+    background-color: transparent; 
+    border-radius: 50%; 
     width: 20px;
     height: 20px;
     position: absolute;
     top: -8.1px;
-    left: 39px; /* ajusta la posición horizontal del círculo */
+    left: 39px; 
 }
  
- .contenido{
-    margin-left: 30px;
+ .title-section{
+    margin-left: 40px;
 }
 
  .seccion {
-    margin-left: 20px; /* para dejar espacio a la izquierda de la barra */
+    margin-left: 20px; 
     padding: 20px;
-    position: relative; /* para que las ramas horizontales sean posicionadas correctamente */
+    position: relative; 
+ }
+ 
+
+ .terminal {
+   background-color: #282a2e;
+   color: #c5c8c6;
+   padding: 20px;
+   width: 100%;
+   height: 150px;
+   border-radius: 10px;
+ }
+
+ .rosa{
+color : #d57bff;
+ }
+
+ .verde{
+color : #00d952;
+ }
+
+ .rojo{
+color : #f05674;
+ }
+
+ .lila{
+color : #b4baff;
+
+ }
+
+ .amarillo{
+color: #ffd700
+ }
+
+ .azul{
+color: #41b3ff
  }
  

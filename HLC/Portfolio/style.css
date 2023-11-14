@@ -25,12 +25,12 @@ body {
  
 
     .navbar {
-      background-color: #1A0B2E; /* Puedes cambiar el código de color a tu gusto */
+      background-color: #1A0B2E; 
     }
 
     
     .navbar-nav .nav-link {
-      color: #ffffff; /* Puedes cambiar el código de color a tu gusto */
+      color: #ffffff; 
     }
 
  .barra-vertical-1 {
@@ -93,11 +93,16 @@ body {
       color: #c5c8c6;
       padding: 20px;
       width: 100%;
-      height: auto; /* Ajustar la altura automáticamente */
+      height: auto; 
       border-radius: 10px;
-      overflow-y: auto; /* Añadir desplazamiento vertical si es necesario */
+      overflow-y: auto; 
     }
-
+    
+  
+    
+.morado{
+   color: #9857D3;
+}
  .rosa{
 color : #d57bff;
  }
@@ -123,3 +128,8 @@ color: #ffd700
 color: #41b3ff
  }
  
+ #particles-js {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+ }

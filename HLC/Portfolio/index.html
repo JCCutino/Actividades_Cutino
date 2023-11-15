@@ -151,7 +151,7 @@
               <div class="row justify-content-center align-items-center g-2">
 
 
-                <div class="col-md-3">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="atropos atropos1">
                     <!-- scale container (required) -->
                     <div class="atropos-scale">
@@ -159,14 +159,26 @@
                       <div class="atropos-rotate">
                         <!-- inner container (required) -->
                         <div class="atropos-inner">
-                          <h1>holaaaa</h1>
+
+                          <div class="tarjeta">
+                            <div class="titulo">
+                                <h2>Mi Título</h2>
+                            </div>
+                            <div class="imagen">
+                                <img src="" alt="Imagen">
+                            </div>
+                        </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                  
+                
 
-                <div class="col-md-3">
+                
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="atropos atropos2">
                     <!-- scale container (required) -->
                     <div class="atropos-scale">
@@ -174,14 +186,23 @@
                       <div class="atropos-rotate">
                         <!-- inner container (required) -->
                         <div class="atropos-inner">
-                          <h1>holaaaa</h1>
+
+                         <div class="tarjeta">
+                            <div class="titulo">
+                                <h2>Mi Título</h2>
+                            </div>
+                            <div class="imagen">
+                                <img src="" alt="Imagen">
+                            </div>
+                        </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="atropos atropos3">
                     <!-- scale container (required) -->
                     <div class="atropos-scale">
@@ -189,13 +210,21 @@
                       <div class="atropos-rotate">
                         <!-- inner container (required) -->
                         <div class="atropos-inner">
-                          <h1>holaaaa</h1>
+
+                         <div class="tarjeta">
+                            <div class="titulo">
+                                <h2>Mi Título</h2>
+                            </div>
+                            <div class="imagen">
+                                <img src="" alt="Imagen">
+                            </div>
+                        </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               
 
                
@@ -232,17 +261,21 @@
 
   <script src="atropos/atropos.min.js"></script>
   <script>
-    const atropos1 = Atropos({
-      el: '.atropos1',
-      // rest of parameters
-    });
+   const atropos1 = Atropos({
+  el: '.atropos1',
+  activeOffset: 40,
+  shadow: false,
+
+});
     
     const atropos2 = new Atropos({
-    el: '.atropos2'
+    el: '.atropos2',
+    shadow: false
   });
 
   const atropos3 = new Atropos({
-    el: '.atropos3'
+    el: '.atropos3',
+    shadow: false
   });
   </script>
 </body>

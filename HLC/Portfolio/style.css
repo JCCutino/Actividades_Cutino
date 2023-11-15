@@ -99,7 +99,20 @@ body {
     }
     
   
-    
+  .cristal{
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    padding: 20px;
+    max-width: 500px;
+  }
+      .img-responsive {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
 .morado{
    color: #9857D3;
 }
@@ -127,6 +140,10 @@ color: #ffd700
  .azul{
 color: #41b3ff
  }
+
+ .gris{
+color: rgb(226, 236, 230);
+}
  
  #particles-js {
    position: absolute;

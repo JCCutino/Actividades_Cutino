@@ -9,3 +9,40 @@
 body {
   color: red;
 }
+
+.titulos {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.golden {
+  background-color: gold;
+}
+.golden p {
+  color: white;
+}
+.golden p a {
+  font-family: Arial, Helvetica, sans-serifS;
+}
+
+.warning, .error, .success, .message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}

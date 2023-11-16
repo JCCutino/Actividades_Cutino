@@ -1,6 +1,62 @@
 @import "components/margen";
 @import "components/footer";
 
-body{
+body {
     color: red;
+}
+
+@mixin large-text {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.titulos {
+    @include large-text();
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.golden {
+    background-color: gold;
+
+    p {
+        color: white;
+
+        a {
+            font-family: Arial, Helvetica, sans-serifS;
+        }
+
+    }
+}
+
+%message-shared{
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+%equal-heights{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message{
+    @extend %message-shared;
+}
+
+.success{
+    @extend %message-shared;
+    border-color: green;
+}
+
+.error{
+    @extend %message-shared;
+    border-color: red;
+}
+
+.warning{
+    @extend %message-shared;
+    border-color: yellow;
 }

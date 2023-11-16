@@ -1,6 +1,8 @@
 @import "components/margen";
 @import "components/footer";
 
+@use "sass:math";
+
 body {
     color: red;
 }
@@ -59,4 +61,9 @@ body {
 .warning{
     @extend %message-shared;
     border-color: yellow;
+}
+
+article[role="main"]{
+
+width: math.div(600px, 960px)*100%;
 }

@@ -154,13 +154,18 @@ body {
 
 .imagen {
   flex: 1;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imagen img {
-  width: 100%;
-  height: auto;
+  width:55%;
+  height: 55%;
+  margin-top: -5px;
+  object-fit: cover; 
 }
+  
 
 .tab-1{
   margin-left: 30px;

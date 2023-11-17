@@ -98,7 +98,8 @@ body {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  overflow-y: auto;
+  overflow-y_:visible;
+  white-space: nowrap;
 }
 
 
@@ -122,6 +123,7 @@ body {
   width: 170px;
   height: 170px;
   margin-left: 50px;
+  border-radius: 16px;
   margin-bottom: 20px;
   overflow: hidden;
   display: flex;
@@ -158,6 +160,14 @@ body {
 .imagen img {
   width: 100%;
   height: auto;
+}
+
+.tab-1{
+  margin-left: 30px;
+}
+
+.tab-2{
+  margin-left: 60px;
 }
 
 .morado {

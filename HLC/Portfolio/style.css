@@ -5,6 +5,14 @@ body {
   color: #FFFFFF;
 }
 
+@font-face {
+
+  font-family: fuenteComic;
+  
+  src: url(Fuentes/KOMIKAX_.ttf);
+  
+  }
+
 main{
   overflow: hidden;
 }
@@ -29,10 +37,6 @@ main{
     display: block;
   }
 
-  .avatar{
-    align-self: center;
-    
-  }
 }
 
 
@@ -222,7 +226,15 @@ main{
   margin-top: 70px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.row {
+  display: flex;
+}
 
 #particles-js {
   margin: 0;
@@ -240,12 +252,19 @@ main{
   align-items: center;
 }
 
+
+
+.columna-contacto img:hover {
+  filter: brightness(1.7); 
+}
+
 .columna-contacto img {
   width: 100%;
   max-width: 150px;
   height: auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  transition: filter 0.5s ease;
 }
 
 .container-form {
@@ -306,4 +325,50 @@ main{
 .btn-primary:focus {
   box-shadow: 0 0 0 0.25rem #261e2d;
   background-color: #45196b ;
+}
+
+.avatar{
+  width: 100%;
+  min-width: 20px;
+  transition: filter 0.5s ease;
+  
+}
+
+.avatar:active{
+  background-color: #45196b ;
+
+}
+
+
+.bocadillo-redondo {
+  position: absolute;
+  height: 150px;
+  width: 300px;
+  bottom: 68%; 
+  left: 90%; 
+  transform: translateX(-50%); 
+  background: white;
+  border-radius: 50%;
+  box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+}
+.bocadillo-redondo:before {
+  border: 25px solid white;
+  content: '';
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -1px;
+  right: 225px;
+  transform: rotate(-49deg);
+}
+.texto-bocadillo {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  font-family: fuenteComic;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  color: black;
 }

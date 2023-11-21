@@ -334,10 +334,6 @@ main{
   
 }
 
-.avatar:active{
-  background-color: #45196b ;
-
-}
 
 
 .bocadillo-redondo {
@@ -363,7 +359,7 @@ main{
   transform: rotate(-49deg);
 }
 .texto-bocadillo {
-  position: absolute;
+  position: -webkit-sticky;
   bottom: 50px;
   left: 30px;
   font-family: fuenteComic;
@@ -371,4 +367,12 @@ main{
   padding: 10px;
   font-size: 16px;
   color: black;
+}
+
+.visible{
+display: block;
+}
+
+.invisible{
+display: none;
 }

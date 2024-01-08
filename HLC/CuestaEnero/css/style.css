@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; 
+    font-family: 'Arial', sans-serif;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #007bff; 
+    color: #fff; 
+  } 
+  .navbar {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+  }
+
+  .navbar-brand {
+    color: #007bff; /* Azul brillante de Bootstrap */
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    color: #333; /* Color de texto oscuro */
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #007bff; /* Cambia a azul al pasar el ratón */
+  }
+
+  h1, h2 {
+    color: #007bff; 
+  }
+
+  section {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; 
+  }

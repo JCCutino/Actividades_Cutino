@@ -13,24 +13,24 @@ body {
     color: #fff; 
   } 
   .navbar {
-    background-color: #f8f9fa; /* Fondo gris claro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    background-color: #f8f9fa; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-brand {
-    color: #007bff; /* Azul brillante de Bootstrap */
+    color: #007bff; 
     font-weight: bold;
     font-size: 1.5rem;
   }
 
   .navbar-nav .nav-link {
-    color: #333; /* Color de texto oscuro */
+    color: #333;
     font-weight: bold;
     transition: color 0.3s ease;
   }
 
   .navbar-nav .nav-link:hover {
-    color: #007bff; /* Cambia a azul al pasar el ratón */
+    color: #007bff; 
   }
 
   h1, h2 {

@@ -32,4 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     revealOnScrollLeft();
     revealOnScrollRight();
-});
+})
+
+function toggleSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section.classList.contains("hidden")) {
+        section.classList.remove("hidden");
+        section.classList.remove("active");
+    } else {
+        section.classList.add("hidden");
+        section.classList.add("active");
+    }
+}
+;

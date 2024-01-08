@@ -56,7 +56,19 @@
                     <p class="lead">Por otro lado, Docker ha transformado la implementación de aplicaciones mediante el uso de contenedores. Al encapsular aplicaciones y sus dependencias, Docker asegura la consistencia en diferentes entornos, simplificando significativamente el despliegue en diversas plataformas. Las imágenes en Docker sirven como plantillas para la creación de contenedores efímeros, que pueden detenerse, reiniciarse o eliminarse fácilmente, proporcionando flexibilidad y escalabilidad.</p>
         
                     <p class="lead">Ambas tecnologías, Git y Docker, son pilares en el desarrollo moderno, permitiendo a los equipos trabajar de manera más ágil, colaborativa y eficiente. Mientras Git facilita el control y seguimiento de cambios en el código fuente, Docker simplifica y agiliza el despliegue de aplicaciones, brindando una solución integral para el desarrollo, pruebas y producción de software. Su adopción en la industria representa un avance significativo en la búsqueda de procesos de desarrollo más eficientes y robustos.</p>
-                </div>
+                  
+                    <div class="container mt-3">
+                      <div class="row justify-content-center button-container">
+                          <div class="col-lg-2 col-md-2 col-sm-6">
+                              <button onclick="toggleSection('gitSection')">Git</button>
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-6">
+                              <button onclick="toggleSection('dockerSection')">Docker</button>
+                          </div>
+                      </div>
+                  </div>
+                
+                  </div>
               </div>
             </div>
         </div>
@@ -64,7 +76,7 @@
           <div class="row justify-content-center g-2">
             
             <div class="col-lg-6 col-md-6 col-sm-12"> 
-             <section id="gitSection" class=" container">
+             <section id="gitSection" class=" container hidden">
             
               <h1>Git</h1>
               <div class="apartados scroll-animation-right ">
@@ -93,7 +105,7 @@
           </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
               
-            <section id="dockerSection" class="container">
+            <section id="dockerSection" class="container hidden">
 
               <h1>Docker</h1>
               <div class="apartados scroll-animation-right ">

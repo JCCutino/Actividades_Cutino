@@ -1,0 +1,33 @@
+
+ .navbarprimary {
+    background-color: #9b1a1a;
+}
+
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bgtoph-icon-clr {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #333;
+}
+
+.dropdown-menu a {
+    color: white !important;
+}
+
+.social-div {
+    padding: 10px;
+}
+
+.social-links a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 20px;
+}

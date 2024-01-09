@@ -50,7 +50,7 @@
                   
                   <h1>Importancia de Git y Docker</h1>
 
-                <div class="apartados">
+                <div class="apartados espacio">
                     <p class="lead">La importancia de Git y Docker en la industria de desarrollo de software es fundamental para impulsar la eficiencia, colaboración y consistencia en el ciclo de vida de las aplicaciones. Git, como sistema de control de versiones distribuido, revoluciona la gestión de cambios, permitiendo a los equipos mantener un historial completo de revisiones y colaborar de manera efectiva en el desarrollo de software. Facilita la identificación y corrección de errores, así como la creación de líneas de desarrollo independientes mediante el concepto de ramificación.</p>
         
                     <p class="lead">Por otro lado, Docker ha transformado la implementación de aplicaciones mediante el uso de contenedores. Al encapsular aplicaciones y sus dependencias, Docker asegura la consistencia en diferentes entornos, simplificando significativamente el despliegue en diversas plataformas. Las imágenes en Docker sirven como plantillas para la creación de contenedores efímeros, que pueden detenerse, reiniciarse o eliminarse fácilmente, proporcionando flexibilidad y escalabilidad.</p>
@@ -58,14 +58,14 @@
                     <p class="lead">Ambas tecnologías, Git y Docker, son pilares en el desarrollo moderno, permitiendo a los equipos trabajar de manera más ágil, colaborativa y eficiente. Mientras Git facilita el control y seguimiento de cambios en el código fuente, Docker simplifica y agiliza el despliegue de aplicaciones, brindando una solución integral para el desarrollo, pruebas y producción de software. Su adopción en la industria representa un avance significativo en la búsqueda de procesos de desarrollo más eficientes y robustos.</p>
                   
                     <div class="container mt-3">
-                      <div class="row justify-content-center button-container">
-                          <div class="col-lg-2 col-md-2 col-sm-6">
-                              <button onclick="toggleSection('gitSection')">Git</button>
-                          </div>
-                          <div class="col-lg-2 col-md-2 col-sm-6">
-                              <button onclick="toggleSection('dockerSection')">Docker</button>
-                          </div>
-                      </div>
+                      <div class="row justify-content-center align-items-center button-container">
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center mb-3">
+                            <button class="btn btn-primary" onclick="toggleSection('gitSection')">Git</button>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center mb-3">
+                            <button class="btn btn-primary" onclick="toggleSection('dockerSection')">Docker</button>
+                        </div>
+                    </div>
                   </div>
                 
                   </div>
@@ -83,11 +83,30 @@
               <h2>Introducción a Git</h2>
   
               <p>Git, un sistema de control de versiones distribuido, revoluciona la gestión de cambios en el desarrollo de software. Al proporcionar un historial completo de revisiones, Git permite a los equipos de desarrollo colaborar de manera eficiente, facilitando la identificación y corrección de errores.</p>
-              </div>
+            
+              <img src="img/Git-Icon-Black.png" alt="Introducción a Git" class="img-fluid imagen-introduccion">
+
+            </div>
               
               <div class="apartados scroll-animation-left ">
               <h2>Comandos Básicos de Git</h2>
-              <p></p>
+              <p>Aquí tienes algunos comandos básicos para empezar:</p>
+
+              <ul>
+                  <li><strong>git init:</strong> Inicializa un nuevo repositorio Git en tu directorio local.</li>
+                  <li><strong>git add [nombre del archivo]:</strong> Añade un archivo específico al área de preparación (staging).</li>
+                  <li><strong>git add .:</strong> Añade todos los archivos modificados al área de preparación.</li>
+                  <li><strong>git commit -m "Mensaje del commit":</strong> Realiza un commit con un mensaje descriptivo.</li>
+                  <li><strong>git status:</strong> Muestra el estado actual de los archivos en el repositorio.</li>
+                  <li><strong>git log:</strong> Muestra el historial de commits.</li>
+                  <li><strong>git branch:</strong> Lista las ramas y resalta la rama actual.</li>
+                  <li><strong>git checkout -b [nombre de la nueva rama]:</strong> Crea y cambia a una nueva rama.</li>
+                  <li><strong>git merge [nombre de la rama]:</strong> Fusiona una rama específica con la rama actual.</li>
+                  <li><strong>git pull:</strong> Obtiene cambios desde un repositorio remoto y los fusiona con la rama actual.</li>
+                  <li><strong>git push:</strong> Envía cambios locales a un repositorio remoto.</li>
+              </ul>
+          
+              <p>Estos son solo algunos de los comandos básicos de Git. Familiarizarte con ellos te permitirá gestionar eficientemente tu código fuente y colaborar con otros desarrolladores.</p>
               </div>
               
               <div class="apartados scroll-animation-right ">
@@ -95,7 +114,7 @@
               <p>El concepto de ramificación en Git permite la creación de líneas de desarrollo independientes. Con git branch, visualizamos las ramas existentes, y git checkout nos permite cambiar entre ellas. La fusión de cambios entre ramas se realiza con git merge, facilitando el desarrollo de múltiples características de manera simultánea.</p>
               </div>
               
-              <div class="apartados scroll-animation-left ">
+              <div class="apartados scroll-animation-left espacio">
               <h2>GitHub y GitLab</h2>    
               <p>GitHub y GitLab, plataformas de alojamiento en la nube, extienden las capacidades de Git. Facilitan la colaboración mediante solicitudes de extracción o fusión, proporcionan herramientas para el seguimiento de problemas y permiten a los equipos gestionar proyectos de manera efectiva.</p>    
               </div>
@@ -111,7 +130,9 @@
               <div class="apartados scroll-animation-right ">
               <h2>Introducción a Docker</h2>
               <p>Docker revoluciona la implementación de aplicaciones mediante contenedores. Un contenedor encapsula una aplicación y sus dependencias, asegurando la consistencia en diferentes entornos. Esto simplifica significativamente el despliegue de aplicaciones en diversas plataformas.</p>
-              </div>
+             
+              <img src="img/brand_docker_icon_157978.png" alt="Introducción a Git" class="img-fluid imagen-introduccion">
+            </div>
               
               <div class="apartados scroll-animation-left">
               <h2>Imágenes y Contenedores</h2>
@@ -123,7 +144,7 @@
               <p>Docker Compose simplifica la gestión de aplicaciones complejas con múltiples servicios. A través de un archivo docker-compose.yml, definimos la configuración de la aplicación, incluyendo servicios, redes y volúmenes. Esto facilita el despliegue y mantenimiento de aplicaciones más sofisticadas.</p>
               </div>
              
-              <div class="apartados scroll-animation-left ">
+              <div class="apartados scroll-animation-left espacio">
               <h2>Orquestadores de Contenedores</h2>
               <p>Herramientas como Kubernetes llevan la gestión de contenedores a un nivel superior. Automatizan tareas como el despliegue, escalado y actualización de contenedores, proporcionando características avanzadas para entornos de producción. Aunque opcional, su comprensión puede ser valiosa para implementaciones más complejas.</p>
               </div>
@@ -138,9 +159,11 @@
 
          
         </main>
-        <footer>
-          
-        </footer>
+        
+        <footer class="footer bg-primary text-white text-center p-4">
+          <p>&copy; 2024 Git y Docker - Juan Cutiño </p>
+      </footer>
+  
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -3,7 +3,14 @@ body {
     padding: 0;
     background-color: #f8f9fa; 
     font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+   
   }
+
+
+.container-fluid {
+    flex: 1;
+}
 
   header {
     text-align: center;
@@ -12,6 +19,14 @@ body {
     background-color: #007bff; 
     color: #fff; 
   } 
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .navbar {
     background-color: #f8f9fa; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -105,7 +120,31 @@ body {
   display: inline;
 }
 
+.espacio{
+  margin-bottom: 120px;
+}
 
 .nav-link button:hover {
   text-decoration: none;
+}
+
+footer {
+  background-color: #007bff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  color: #ffffff; 
+  font-size: large;
+}
+.imagen-introduccion {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px; 
+  display: block;
 }

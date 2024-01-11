@@ -64,6 +64,30 @@
         <?php include("components/banner.php") ?>
 
         <div class="container mt-5">
+
+        <div class="row justify-content-center align-items-center g-2">
+    <div class="col">
+        <?php if (isset($_SESSION['resultOrder']) && $_SESSION['resultOrder'] === true): ?>
+            <div class="card bg-success text-white mt-3 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pedido Aceptado</h5>
+                    <p class="card-text">Tu pedido ha sido aceptado correctamente.</p>
+                </div>
+            </div>
+        <?php elseif (isset($_SESSION['resultOrder']) && $_SESSION['resultOrder'] === false): ?>
+            <div class="card bg-danger text-white mt-3 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pedido Eliminado</h5>
+                    <p class="card-text">Tu pedido ha sido eliminado.</p>
+                </div>
+            </div>
+        <?php endif; 
+        $_SESSION['resultOrder'] = null?>
+    </div>
+</div>
+
+        
+
     <h2>Pedido Total</h2>
 
    
@@ -101,12 +125,26 @@ if (isset($_SESSION['cart'])) {
     </table>
 
 
-    <div class="mt-4 border-top d-flex justify-content-between align-items-center">
-        <h5>Total:</h5>
     
-        <span class="badge badge-primary badge-pill black">  <?php echo '<h3>' . $_SESSION['cart_total'] . '€</h3>';?></span>
-        
+     <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h3>Total:  <?php echo isset($_SESSION['cart_total']) ? $_SESSION['cart_total'] : 0 ?>€</h3>
+           
+        </div>
+        <div class="d-flex">
+        <form action="confirmOrder.php" method="post">
+         <button type="submit" class="btn btn-success ml-2">Confirmar</button>
+        </form>
+           <!-- Deletion form -->
+        <form action="deleteOrder.php" method="post">
+            <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+        </form>
+
+        </div>
     </div>
+</div>
+
+    
 </div>
         </main>
         <footer>
@@ -124,5 +162,6 @@ if (isset($_SESSION['cart'])) {
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+       
     </body>
 </html>

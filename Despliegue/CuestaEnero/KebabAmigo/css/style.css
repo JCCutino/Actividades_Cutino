@@ -1,33 +1,147 @@
-
- .navbarprimary {
-    background-color: #9b1a1a;
+.navbarprimary {
+  background-color: #9b1a1a;
 }
 
-
 .navbar-brand img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .bgtoph-icon-clr {
-    color: white;
+  color: white;
 }
 
 .dropdown-menu {
-    background-color: #333;
+  background-color: #333;
 }
 
 .dropdown-menu a {
-    color: white !important;
+  color: white !important;
 }
 
 .social-div {
-    padding: 10px;
+  padding: 10px;
 }
 
 .social-links a {
-    color: white !important;
-    text-decoration: none;
-    font-size: 25px;
+  color: white !important;
+  text-decoration: none;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.icono-nav {
+  margin-left: 20px;
+}
+
+.red {
+  background-color: #9b1a1a;
+}
+
+.green{
+    color: #35c305;
+}
+
+.banner {
+  background-image: url("../img/banner.avif");
+  background-size: cover;
+  background-position: center;
+  color: #d5d5d5;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.banner p {
+  font-size: 30px;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.divider {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.address {
+  margin-bottom: 20px;
+}
+
+.btn.red {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn.red:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+  border: 1px solid #cc0000;
+}
+
+.about-section {
+    background-color: #f8f9fa; 
+    padding: 50px 0; 
+}
+
+.about-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.about-content h2 {
+    font-size: 50px; /
+}
+
+.about-content p {
+    font-size: 32px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    max-width: 750px;
+    padding: 30px;
+}
+
+.halal{
+    margin-bottom: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80px !important
+}
+.product-section{
+    margin-top: 50px;
+}
+.product-card {
+    padding: 30px; 
+    border: 1px solid #ddd;
+    padding: 15px;
+     margin-top: 50px;
+    margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
+    width: 250px;
+    height: 350px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .halal{
+        margin-bottom: 20px;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 50px !important
+    }
 }

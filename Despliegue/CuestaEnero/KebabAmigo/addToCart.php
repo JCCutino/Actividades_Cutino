@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $item = array(
+        'photo' => $_POST['productPhoto'],
         'name' => $_POST['productName'],
         'price' => $_POST['productPrice']
     );

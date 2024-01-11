@@ -1,4 +1,4 @@
-<div class="about-section">
+<div class="about-section" id="about">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 about-image">
                     <img src="img/senor_kebab.jpg" alt="Kebab Amigo" class="img-fluid">

@@ -31,25 +31,7 @@
 
         <?php include("components/products.php") ?>
 
-        <?php
-
-
-
-if (isset($_SESSION['cart'])) {
    
-    echo '<h2>Shopping Cart</h2>';
-    echo '<ul>';
-    foreach ($_SESSION['cart'] as $cartItem) {
-        echo '<li>' . $cartItem['name'] . ' - $' . $cartItem['price'] . '</li>';
-    }
-    echo '</ul>';
-
-   
-    echo '<p>Total: $' . $_SESSION['cart_total'] . '</p>';
-} else {
-    echo '<p>Your shopping cart is empty.</p>';
-}
-?> 
         </main>
         <footer>
             <!-- place footer here -->

@@ -1,7 +1,16 @@
-<div class="container product-section text-center">
+<div class="container product-section text-center" id="productos">
+
+    <div
+        class="row justify-content-center align-items-center g-2"
+    >
+        <div class="col"><h1>PRODUCTOS</h1></div>
+        
+    </div>
+    
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/doner.jpg">
     <input type="hidden" name="productName" value="Doner Mixto">
     <input type="hidden" name="productPrice" value="5.50"> 
 
@@ -16,6 +25,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/doner.jpg">
     <input type="hidden" name="productName" value="Doner Pollo">
     <input type="hidden" name="productPrice" value="5.50"> 
 
@@ -30,6 +40,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/doner.jpg">
     <input type="hidden" name="productName" value="Doner Ternera">
     <input type="hidden" name="productPrice" value="5.50"> 
 
@@ -44,6 +55,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/menu-doner.jpg">
     <input type="hidden" name="productName" value="Menu Doner">
     <input type="hidden" name="productPrice" value="8.99"> 
 
@@ -59,6 +71,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/durum.jpg">
     <input type="hidden" name="productName" value="Durum Mixto">
     <input type="hidden" name="productPrice" value="6.50"> 
 
@@ -73,6 +86,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/durum.jpg">
     <input type="hidden" name="productName" value="Durum Pollo">
     <input type="hidden" name="productPrice" value="6.50"> 
 
@@ -87,6 +101,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/durum.jpg">
     <input type="hidden" name="productName" value="Durum Ternera">
     <input type="hidden" name="productPrice" value="6.50"> 
 
@@ -101,6 +116,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
         <form action="addToCart.php" method="post">
+    <input type="hidden" name="productPhoto" value="img/menu-durum.jpg">
     <input type="hidden" name="productName" value="Menu Durum">
     <input type="hidden" name="productPrice" value="6.50"> 
 

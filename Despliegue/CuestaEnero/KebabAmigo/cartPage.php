@@ -45,16 +45,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#productos">Productos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Ubicación</a>
-                </li>
             </ul>
         </div>
 
         <!-- Íconos de carrito y usuario -->
         <div class="d-flex">
             <a class="nav-link" href="cartPage.php"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size:30px;"></i></a>
-            <a class="nav-link icono-nav" href="#"><i class="fa-solid fa-user" style="color: #ffffff; font-size:30px;"></i></a>
         </div>
     </div>
 </nav>

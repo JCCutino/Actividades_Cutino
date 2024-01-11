@@ -5,7 +5,7 @@
                     <h1>Kebab Amigo</h1>
                     <div class="divider"></div>
                     <p class="address">Calle Falsa 123, Springfield</p>
-                    <a href="#" class="btn red">Ver Productos</a>
+                    <a href="index.php#productos" class="btn red">Ver Productos</a>
                 </div>
             </div>
         </div>

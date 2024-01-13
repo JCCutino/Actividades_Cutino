@@ -2,11 +2,11 @@
 
 */
 function showNotification(options) {
-  // Crear elemento de notificación
+  // Creamos un elemento de notificación
   let notification = document.createElement('div');
   notification.classList.add('notification');
 
-  // Configurar opciones
+  // Configuramos las opciones
   let topPosition = options.top || 0;
   let rightPosition = options.right || 0;
 
@@ -21,10 +21,10 @@ function showNotification(options) {
     notification.classList.add(options.className);
   }
 
-  // Agregar notificación al cuerpo del documento
+  // Agregamos la notificación al cuerpo del documento
   document.body.appendChild(notification);
 
-  // Ocultar la notificación después de 1.5 segundos
+  // Ocultamos la notificación después de 1.5 segundos
   setTimeout(() => {
     document.body.removeChild(notification);
   }, 1500);

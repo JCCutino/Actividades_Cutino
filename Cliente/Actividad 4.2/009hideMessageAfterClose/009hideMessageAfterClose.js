@@ -7,7 +7,7 @@ creado para la lista de mensajes del ejercicio anterior. Es decir, haz que funci
 
 let listaMensajes = document.getElementById('listaMensajes');
 
-// Agrega un botón de cierre a cada mensaje
+// Agregamos un botón de cierre a cada mensaje
 let mensajes = listaMensajes.querySelectorAll('.mensaje');
 mensajes.forEach((mensaje) => {
   const botonCierre = document.createElement('span');
@@ -18,6 +18,6 @@ mensajes.forEach((mensaje) => {
     mensaje.remove();
   });
 
-  // Agrega el botón de cierre al mensaje
+  // Agregamos el botón de cierre al mensaje
   mensaje.appendChild(botonCierre);
 });

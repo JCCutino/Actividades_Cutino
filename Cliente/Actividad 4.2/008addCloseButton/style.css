@@ -1,0 +1,25 @@
+body {
+    margin: auto;
+    width: 500px;
+  }
+#listaMensajes {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mensaje {
+    background: #edf5e1;
+    padding: 10px 20px 10px;
+    border-top: solid 2px #c4df9b;
+    position: relative;
+    max-width: 350px;
+  }
+
+  .boton-cierre {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: rgb(173, 27, 27);
+    font-size: 22px;
+  }

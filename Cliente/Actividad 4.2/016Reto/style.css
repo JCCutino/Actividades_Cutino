@@ -1,0 +1,19 @@
+.carrousel {
+    display: flex;
+    justify-content: center;
+    height: 400px; 
+}
+
+#retroceder,
+#avanzar {
+    font-size: 16px;
+    flex: 1; 
+    max-width: 200px;
+    margin: 0;
+}
+
+#imagen {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+}

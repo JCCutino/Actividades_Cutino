@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="015imageGallery.js"></script>
+    <script defer src="015imageGallery.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+
+    <div class="contenedor-imagen-principal">
+        <img class="imagen-principal" src="img/jovani3.jpeg" alt="Imagen Principal" id="imagenPrincipal">
+      </div>
+    </div>
+
+    <div class="contenedor-galeria">
+        <div class="miniaturas">
+          <img class="miniatura" src="img/jovani1.avif" alt="Miniatura 1" onclick="cambiarImagen('img/jovani1.avif')">
+          <img class="miniatura" src="img/jovani2.jpg" alt="Miniatura 2" onclick="cambiarImagen('img/jovani2.jpg')">
+          <img class="miniatura" src="img/jovani3.jpeg" alt="Miniatura 3" onclick="cambiarImagen('img/jovani3.jpeg')">
+        </div>
+      
+       
 </body>
 </html>

@@ -1,0 +1,28 @@
+
+  .navbar-brand img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .social-links a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  
+  .icono-nav {
+    margin-left: 20px;
+  }
+  
+  .black{
+    color:#000000!important;
+  }
+  .red {
+    background-color: #9b1a1a;
+  }
+  
+  .green{
+      color: #35c305;
+  }
+  

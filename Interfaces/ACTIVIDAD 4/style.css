@@ -5,7 +5,7 @@
   }
   
   .social-links a {
-    color: white !important;
+    color: rgb(255, 255, 255) !important;
     text-decoration: none;
     font-size: 25px;
     margin-right: 20px;
@@ -26,3 +26,68 @@
       color: #35c305;
   }
   
+  .blue{
+    background-color: #1a569b;
+  }
+
+  .form-section{
+    display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 70px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#captcha {
+    margin-bottom: 16px;
+}
+
+#captcha span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#respuestaCaptcha {
+    margin-left: 10px;
+}
+
+.check-icon {
+    color: green;
+}
+
+.times-icon {
+    color: red;
+}

@@ -12,15 +12,16 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
    
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script defer src="script.js"></script>
     <script src="https://kit.fontawesome.com/f9a29f74f0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark red">
+    <nav class="navbar navbar-expand-lg navbar-dark blue">
       <div class="container">
-          <a class="navbar-brand" href="#"><img src="img/logo_kebab.png" alt=""></a>
+          <a class="navbar-brand" href="#"><img src="" alt=""></a>
   
           <!-- Botón para dispositivos pequeños -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,19 +43,73 @@
           <!-- Íconos de carrito y usuario -->
           <div class="d-flex">
               <a class="nav-link" href=""><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size:30px;"></i></a>
-              <a class="nav-link" href=""><i class="fa-solid fa-user" style="color: #ffffff; font-size:30px; margin-left: 10px;"></i></i></a>
+              <a class="nav-link" href=""><i class="fa-solid fa-user" style="color: #ffffff; font-size:30px; margin-left: 20px;"></i></i></a>
           </div>
       </div>
   </nav>
   </header>
   <main>
 
-    <div class="container">
+    <div class="container justify-content-center form-section">
+      <form id="formulario-contacto">
       <div class="row justify-content-center align-items-center g-2">
         
-        
-       
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required>
+      
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos">
+      
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
       </div>
+
+      <div class="row justify-content-center align-items-center g-2">
+      
+        <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto">
+      
+      </div>
+      
+      <div class="row justify-content-center align-items-center g-2">
+        
+        <label for="comentario">Comentario *</label>
+        <textarea id="comentario" name="comentario" required></textarea>
+      </div>
+      
+        
+      <div class="row justify-content-center align-items-center g-2">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+          <label for="politica">Aceptar política de privacidad *</label>
+          <input type="checkbox" id="politica" name="politica" required>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          
+          <label for="captcha">Captcha: Suma</label>
+          <div id="captcha">
+              <span id="num1"></span> + <span id="num2"></span> =
+              <input type="text" id="resultadoCaptcha" name="resultadoCaptcha" required>
+              <span id="respuestaCaptcha"></span>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+        
+          <button type="button" onclick="enviarFormulario()">Enviar</button>
+      </form>
+       
+      
       
     </div>
     

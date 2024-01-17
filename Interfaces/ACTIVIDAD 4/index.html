@@ -50,7 +50,41 @@
   </header>
   <main>
 
-    <div class="container justify-content-center form-section">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-2">
+        <div class=" col-lg-6 col-md-6 col-sm-12">
+          <h2>Historia de la Empresa</h2>
+          <p>
+            Empire Games Sevilla es tu destino para todo lo relacionado con juegos de mesa,
+            miniaturas, modelismo, maquetas y cartas coleccionables. Desde nuestra fundación en 2010,
+            nos hemos dedicado a proporcionar a la comunidad de jugadores experiencias inigualables.
+          </p>
+          <!-- Imagen y eventos de mouseover/mouseout -->
+          <img id="imagenEmpresa" src="imagen1.jpg" alt="Oficinas" class="img-fluid" onmouseover="cambiarImagen('imagen2.jpg')" onmouseout="cambiarImagen('imagen1.jpg')">
+          <p id="textoImagen" class="mt-2">Pasa el ratón sobre la imagen</p>
+        </div>
+
+        <div class=" col-lg-6 col-md-6 col-sm-12">
+          <h2>Información de Contacto</h2>
+          <address>
+              <strong>Dirección:</strong> C. Chaves Nogales, 1, 41018 Sevilla<br>
+              <strong>Email:</strong> empire-games@gmail.com<br>
+              <strong>Teléfono:</strong> 954 09 49 98
+          </address>
+      
+          <h2>Ubicación en el Mapa</h2>
+          <!-- Mapa de Google Maps incrustado -->
+          <div class="container-iframe">
+            <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12680.80641194569!2d-5.99123197611034!3d37.385064305004704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ea0de7886d5%3A0xa74f3b31895f90c!2sEmpire%20Games!5e0!3m2!1ses!2ses!4v1705494933921!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    
+
+    <div class="container justify-content-center form-section mt-5">
       <form id="formulario-contacto">
       <div class="row justify-content-center align-items-center g-2">
         

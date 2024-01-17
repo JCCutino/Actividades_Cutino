@@ -37,3 +37,21 @@ function enviarFormulario() {
         alert("Por favor, complete todos los campos obligatorios, acepte la política de privacidad y resuelva correctamente el captcha.");
     }
 }
+
+function cambiarImagen(nuevaImagen) {
+    $("#imagenEmpresa").attr("src", nuevaImagen);
+}
+
+$(document).ready(function () {
+    // Evento mouseover/mouseout para cambiar opacidad y mostrar texto
+    $("#imagenEmpresa").hover(
+        function () {
+            $("#imagenEmpresa").css("opacity", "0.7");
+            $("#textoImagen").text("Giro 2 de maná azul");
+        },
+        function () {
+            $("#imagenEmpresa").css("opacity", "1");
+            $("#textoImagen").text("Pasa el ratón sobre la imagen");
+        }
+    );
+});

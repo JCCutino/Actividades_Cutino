@@ -38,20 +38,25 @@ function enviarFormulario() {
     }
 }
 
-function cambiarImagen(nuevaImagen) {
-    $("#imagenEmpresa").attr("src", nuevaImagen);
-}
 
-$(document).ready(function () {
-    // Evento mouseover/mouseout para cambiar opacidad y mostrar texto
-    $("#imagenEmpresa").hover(
+    $(document).ready(function () {
+      // Evento mouseover/mouseout para cambiar opacidad y mostrar texto con fadeIn()
+      $("#imagenEmpresa").hover(
         function () {
-            $("#imagenEmpresa").css("opacity", "0.7");
-            $("#textoImagen").text("Giro 2 de maná azul");
+          $("#imagenEmpresa").fadeOut(500, function () {
+            $(this).attr("src", "img/tienda-interior.jpg").fadeIn(500);
+          });
+          $("#textoImagen").fadeOut(500, function () {
+            $(this).text("Nuestra tienda").fadeIn(500);
+          });
         },
         function () {
-            $("#imagenEmpresa").css("opacity", "1");
-            $("#textoImagen").text("Pasa el ratón sobre la imagen");
+          $("#imagenEmpresa").fadeOut(500, function () {
+            $(this).attr("src", "img/tienda.jpg").fadeIn(500);
+          });
+          $("#textoImagen").fadeOut(500, function () {
+            $(this).text("Pasa el ratón sobre la imagen").fadeIn(500);
+          });
         }
-    );
-});
+      );
+    });

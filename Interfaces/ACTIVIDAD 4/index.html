@@ -54,41 +54,64 @@
       <div class="row justify-content-center align-items-center g-2">
   
         <div class="col-md-8 mt-5">
-          <div class="section">
-            <h2>Historia de la Empresa</h2>
-            <p>
-              Empire Games Sevilla es tu destino para todo lo relacionado con juegos de mesa,
-              miniaturas, modelismo, maquetas y cartas coleccionables. Desde nuestra fundación en 2010,
-              nos hemos dedicado a proporcionar a la comunidad de jugadores experiencias inigualables.
-            </p>
-            <img id="imagenEmpresa" src="img/tienda.jpg" alt="Oficinas" class="img-fluid" onmouseover="cambiarImagen('img/tienda-interior.jpg')" onmouseout="cambiarImagen('img/tienda.jpg')">
-            <p id="textoImagen" class="mt-2">Pasa el ratón sobre la imagen</p>
-          </div>
-        </div>
   
-        <div class="col-md-8">
-          <div class="section">
-            <h2>Información de Contacto</h2>
-            <address>
-              <strong>Dirección:</strong> C. Chaves Nogales, 1, 41018 Sevilla<br>
-              <strong>Email:</strong> empire-games@gmail.com<br>
-              <strong>Teléfono:</strong> 954 09 49 98
-            </address>
-          </div>
-        </div>
+          <!-- Acordeón -->
+          <div id="accordionExample">
   
-        <div class="col-md-8">
-          <div class="section">
-            <h2>Ubicación en el Mapa</h2>
-            <div class="container-iframe">
-              <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12680.80641194569!2d-5.99123197611034!3d37.385064305004704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ea0de7886d5%3A0xa74f3b31895f90c!2sEmpire%20Games!5e0!3m2!1ses!2ses!4v1705494933921!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Historia de la Empresa -->
+            <div class="accordion-item section">
+              <h2 class="accordion-header" id="headingHistoria">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHistoria" aria-expanded="true" aria-controls="collapseHistoria">
+                  Historia de la Empresa
+                </button>
+              </h2>
+              <div id="collapseHistoria" class="accordion-body active">
+                <p>
+                  Empire Games Sevilla es tu destino para todo lo relacionado con juegos de mesa,
+                  miniaturas, modelismo, maquetas y cartas coleccionables. Desde nuestra fundación en 2010,
+                  nos hemos dedicado a proporcionar a la comunidad de jugadores experiencias inigualables.
+                </p>
+                <img id="imagenEmpresa" src="img/tienda.jpg" alt="Oficinas" class="img-fluid">
+                <p id="textoImagen" class="mt-2">Pasa el ratón sobre la imagen</p>
+              </div>
             </div>
+  
+            <!-- Información de Contacto -->
+            <div class="accordion-item section">
+              <h2 class="accordion-header" id="headingContacto">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContacto" aria-expanded="false" aria-controls="collapseContacto">
+                  Información de Contacto
+                </button>
+              </h2>
+              <div id="collapseContacto" class="accordion-body">
+                <address>
+                  <strong>Dirección:</strong> C. Chaves Nogales, 1, 41018 Sevilla<br>
+                  <strong>Email:</strong> empire-games@gmail.com<br>
+                  <strong>Teléfono:</strong> 954 09 49 98
+                </address>
+              </div>
+            </div>
+  
+            <!-- Ubicación en el Mapa -->
+            <div class="accordion-item section">
+              <h2 class="accordion-header" id="headingMapa">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMapa" aria-expanded="false" aria-controls="collapseMapa">
+                  Ubicación en el Mapa
+                </button>
+              </h2>
+              <div id="collapseMapa" class="accordion-body">
+                <div class="container-iframe">
+                  <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12680.80641194569!2d-5.99123197611034!3d37.385064305004704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ea0de7886d5%3A0xa74f3b31895f90c!2sEmpire%20Games!5e0!3m2!1ses!2ses!4v1705494933921!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </div>
+  
           </div>
+  
         </div>
   
       </div>
     </div>
-    
     
 
     <div class="container justify-content-center form-section mt-5">

@@ -123,3 +123,14 @@ button:hover {
   color: #555555;
 }
 
+.accordion-item {
+  cursor: pointer;
+}
+
+.accordion-body {
+  display: none;
+}
+
+.active {
+  display: block;
+}

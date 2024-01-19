@@ -60,14 +60,25 @@ function enviarFormulario() {
         }
       );
     });
-    $(document).ready(function () {
-      $(".accordion-button").click(function () {
-        // Cierra todos los elementos del acordeón
-        $(".accordion-body").slideUp();
-        $(".accordion-button").removeClass("active");
 
-        // Abre o cierra el elemento clicado
-        $(this).next(".accordion-body").slideToggle();
-        $(this).toggleClass("active");
+
+    $(document).ready(function () {
+      $(".accordion-header").click(function () {
+      
+        let elementoClickado = $(this).next(".accordion-body");
+    
+       
+        let otrosElementos = $(".accordion-body").not(elementoClickado);
+    
+      
+        otrosElementos.each(function () {
+          $(this).slideUp();
+        });
+    
+      
+        elementoClickado.slideToggle();
+    
+      
       });
     });
+    

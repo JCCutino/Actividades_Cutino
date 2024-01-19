@@ -67,9 +67,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
-}
 
 #captcha {
     margin-bottom: 16px;
@@ -128,9 +125,9 @@ button:hover {
 }
 
 .accordion-body {
-  display: none;
+  display: block;
 }
 
 .active {
-  display: block;
+  display: none;
 }

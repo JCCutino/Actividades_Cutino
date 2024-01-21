@@ -131,3 +131,13 @@ button {
 .active {
   display: none;
 }
+
+.footer-title {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.footer-title a, .footer-list a {
+  text-decoration: none; 
+  color: inherit; 
+}

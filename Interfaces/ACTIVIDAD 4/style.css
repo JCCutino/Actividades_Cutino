@@ -149,3 +149,13 @@ button {
 .enfocado {
   background-color: #4b7429a0; 
 }
+#volverArriba {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d2a233;
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+}

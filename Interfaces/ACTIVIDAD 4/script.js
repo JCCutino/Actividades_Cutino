@@ -141,3 +141,19 @@ function enviarFormulario() {
         }
       });
     });
+
+    $(document).ready(function() {
+      // Mostrar u ocultar el botón "Volver Arriba" dependiendo del desplazamiento
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+          $('#volverArriba').fadeIn();
+        } else {
+          $('#volverArriba').fadeOut();
+        }
+      });
+  
+      // Desplazarse hacia arriba al hacer clic en el botón "Volver Arriba"
+      $('#volverArriba').click(function() {
+        $('html, body').animate({scrollTop: 0}, 'fast');
+      });
+    });

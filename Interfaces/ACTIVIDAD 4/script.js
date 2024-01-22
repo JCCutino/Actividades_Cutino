@@ -29,14 +29,30 @@ function validarCaptcha() {
 }
 
 function enviarFormulario() {
-    // Validamos campos obligatorios y política de privacidad
-    if ($("#formulario-contacto")[0].checkValidity() && validarCaptcha()) {
-        alert("Formulario válido. Enviando datos al servidor.");
- 
-    } else {
-        alert("Por favor, complete todos los campos obligatorios, acepte la política de privacidad y resuelva correctamente el captcha.");
-    }
+  if ($("#formulario-contacto")[0].checkValidity()) {
+    let formData = $("#formulario-contacto").serialize();
+
+    $.post("solicitud.php", formData, function(response) {
+      // Animación y desaparición del formulario
+      $("#formulario-contacto").animate({
+        opacity: 0,
+        height: 0,
+        rotate: '+=360deg'
+      }, 1000, function() {
+
+        let tituloForm = $("#tituloForm");
+
+        $("<h2 class='text-center'>Mensaje enviado con éxito</h2>").insertAfter(tituloForm);
+      });
+    })
+    .fail(function(error) {
+      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+    });
+  } else {
+    alert("Por favor, complete todos los campos obligatorios y resuelva correctamente el captcha.");
+  }
 }
+
 
 
     $(document).ready(function () {
@@ -115,7 +131,7 @@ function enviarFormulario() {
     });
 
     $(document).ready(function () {
-      
+
       $("#formulario-contacto input, #formulario-contacto textarea").on({
         focusin: function () {
           $(this).addClass("enfocado");

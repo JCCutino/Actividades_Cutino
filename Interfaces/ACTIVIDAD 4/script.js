@@ -82,3 +82,32 @@ function enviarFormulario() {
       });
     });
     
+
+    $(document).ready(function () {
+     
+      agregarClase();
+
+    
+      $(window).resize(function () {
+        agregarClase();
+      });
+
+      function agregarClase() {
+        let anchoPantalla = $(window).width();
+
+ 
+        let elemento = $("#footer");
+
+     
+        let tamañoLimite = 768;
+
+      
+        if (anchoPantalla <= tamañoLimite) {
+          elemento.addClass("text-center");
+          $(".footer-list li").addClass("quitar-punto");
+        } else {
+          elemento.removeClass("text-center");
+          $(".footer-list li").removeClass("quitar-punto");
+        }
+      }
+    });

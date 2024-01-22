@@ -29,27 +29,32 @@ function validarCaptcha() {
 }
 
 function enviarFormulario() {
+  
+  let errorMessage = $(".error-message");
+
   if ($("#formulario-contacto")[0].checkValidity()) {
+    // Si el formulario es válido
     let formData = $("#formulario-contacto").serialize();
 
     $.post("solicitud.php", formData, function(response) {
-      // Animación y desaparición del formulario
-      $("#formulario-contacto").animate({
-        opacity: 0,
-        height: 0,
-        rotate: '+=360deg'
-      }, 1000, function() {
-
+      // Ocultar el formulario con slideToggle
+      $("#formulario-contacto").slideToggle(1000, function() {
+        // Después de completar el slideToggle, agregar el mensaje de éxito
         let tituloForm = $("#tituloForm");
-
         $("<h2 class='text-center'>Mensaje enviado con éxito</h2>").insertAfter(tituloForm);
       });
     })
     .fail(function(error) {
-      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+      if (errorMessage.length === 0) {
+        $("<p class='text-center error-message'>Error al enviar el formulario.</p>").insertBefore("#botonForm")
+
+      }
     });
   } else {
-    alert("Por favor, complete todos los campos obligatorios y resuelva correctamente el captcha.");
+    // Si el mensaje de error no existe, agregarlo y hacer parpadear en rojo
+    if (errorMessage.length === 0) {
+      $("<p class='text-center error-message'>Complete todos los campos obligatorios correctamente.</p>").insertBefore("#botonForm")
+    }
   }
 }
 

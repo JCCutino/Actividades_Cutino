@@ -159,3 +159,10 @@ button {
   padding: 10px;
   cursor: pointer;
 }
+.error-message{
+  color: red;
+}
+
+.img-empresa{
+  max-width: 750px;
+}

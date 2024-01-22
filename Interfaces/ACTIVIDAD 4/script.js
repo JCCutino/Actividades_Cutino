@@ -47,7 +47,8 @@ function enviarFormulario() {
             $(this).attr("src", "img/tienda-interior.jpg").fadeIn(500);
           });
           $("#textoImagen").fadeOut(500, function () {
-            $(this).text("Nuestra tienda").fadeIn(500);
+            $(this).text("");
+            $(this).append("Nuestra tienda").fadeIn(500);
           });
         },
         function () {
@@ -55,7 +56,8 @@ function enviarFormulario() {
             $(this).attr("src", "img/tienda.jpg").fadeIn(500);
           });
           $("#textoImagen").fadeOut(500, function () {
-            $(this).text("Pasa el ratón sobre la imagen").fadeIn(500);
+            $(this).text("");
+            $(this).prepend("Pasa el ratón sobre la imagen").fadeIn(500);
           });
         }
       );
@@ -110,4 +112,16 @@ function enviarFormulario() {
           $(".footer-list li").removeClass("quitar-punto");
         }
       }
+    });
+
+    $(document).ready(function () {
+      
+      $("#formulario-contacto input, #formulario-contacto textarea").on({
+        focusin: function () {
+          $(this).addClass("enfocado");
+        },
+        focusout: function () {
+          $(this).removeClass("enfocado");
+        }
+      });
     });

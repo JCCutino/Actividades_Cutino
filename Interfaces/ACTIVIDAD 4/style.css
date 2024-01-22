@@ -145,3 +145,7 @@ button {
 .quitar-punto {
   list-style: none;
 }
+
+.enfocado {
+  background-color: #4b7429a0; 
+}

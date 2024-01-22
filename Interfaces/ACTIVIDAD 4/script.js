@@ -37,7 +37,8 @@ function enviarFormulario() {
     let formData = $("#formulario-contacto").serialize();
 
     $.post("solicitud.php", formData, function(response) {
-      $("#footerGeneral").addClass("fixed-bottom");
+      $("#footerGeneral").addClass("mt-10");
+      $("#footerGeneral").removeClass("mt-5");
       $("#formulario-contacto").slideToggle(1000, function() {
         
         let tituloForm = $("#tituloForm");

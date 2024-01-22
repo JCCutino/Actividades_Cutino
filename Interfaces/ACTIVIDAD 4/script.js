@@ -37,9 +37,9 @@ function enviarFormulario() {
     let formData = $("#formulario-contacto").serialize();
 
     $.post("solicitud.php", formData, function(response) {
-      // Ocultar el formulario con slideToggle
+     
       $("#formulario-contacto").slideToggle(1000, function() {
-        // Después de completar el slideToggle, agregar el mensaje de éxito
+        
         let tituloForm = $("#tituloForm");
         $("<h2 class='text-center'>Mensaje enviado con éxito</h2>").insertAfter(tituloForm);
       });
@@ -60,29 +60,40 @@ function enviarFormulario() {
 
 
 
-    $(document).ready(function () {
-      // Evento mouseover/mouseout para cambiar opacidad y mostrar texto con fadeIn()
-      $("#imagenEmpresa").hover(
-        function () {
-          $("#imagenEmpresa").fadeOut(500, function () {
-            $(this).attr("src", "img/tienda-interior.jpg").fadeIn(500);
-          });
-          $("#textoImagen").fadeOut(500, function () {
-            $(this).text("");
-            $(this).append("Nuestra tienda").fadeIn(500);
-          });
-        },
-        function () {
-          $("#imagenEmpresa").fadeOut(500, function () {
-            $(this).attr("src", "img/tienda.jpg").fadeIn(500);
-          });
-          $("#textoImagen").fadeOut(500, function () {
-            $(this).text("");
-            $(this).prepend("Pasa el ratón sobre la imagen").fadeIn(500);
-          });
-        }
-      );
+$(document).ready(function () {
+  // Evento mouseover
+  $("#imagenEmpresa").mouseover(function () {
+    cambiarAppend("img/tienda-interior.jpg", "Nuestra tienda.");
+    
+  });
+
+  // Evento mouseout
+  $("#imagenEmpresa").mouseout(function () {
+    cambiarPreppend("img/tienda.jpg", "Pasa el ratón sobre la imagen");
+  });
+
+  function cambiarAppend(nuevaImagen, nuevoTexto) {
+    $("#imagenEmpresa").fadeOut(500, function () {
+      $(this).attr("src", nuevaImagen).fadeIn(500);
     });
+
+    $("#textoImagen").fadeOut(500, function () {
+      $(this).text("");
+      $(this).append(nuevoTexto).fadeIn(500);
+    });
+  }
+  function cambiarPreppend(nuevaImagen, nuevoTexto) {
+    $("#imagenEmpresa").fadeOut(500, function () {
+      $(this).attr("src", nuevaImagen).fadeIn(500);
+    });
+
+    $("#textoImagen").fadeOut(500, function () {
+      $(this).text(".");
+      $(this).prepend(nuevoTexto).fadeIn(500);
+    });
+  }
+});
+
 
 
     $(document).ready(function () {

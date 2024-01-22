@@ -37,11 +37,12 @@ function enviarFormulario() {
     let formData = $("#formulario-contacto").serialize();
 
     $.post("solicitud.php", formData, function(response) {
-     
+      $("#footerGeneral").addClass("fixed-bottom");
       $("#formulario-contacto").slideToggle(1000, function() {
         
         let tituloForm = $("#tituloForm");
         $("<h2 class='text-center'>Mensaje enviado con éxito</h2>").insertAfter(tituloForm);
+        
       });
     })
     .fail(function(error) {
@@ -173,3 +174,4 @@ $(document).ready(function () {
         $('html, body').animate({scrollTop: 0}, 'fast');
       });
     });
+    

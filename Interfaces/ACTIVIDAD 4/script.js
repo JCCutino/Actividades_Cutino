@@ -29,55 +29,73 @@ function validarCaptcha() {
 }
 
 function enviarFormulario() {
+  
+  let errorMessage = $(".error-message");
+
   if ($("#formulario-contacto")[0].checkValidity()) {
+    // Si el formulario es válido
     let formData = $("#formulario-contacto").serialize();
 
     $.post("solicitud.php", formData, function(response) {
-      // Animación y desaparición del formulario
-      $("#formulario-contacto").animate({
-        opacity: 0,
-        height: 0,
-        rotate: '+=360deg'
-      }, 1000, function() {
-
+      $("#footerGeneral").addClass("mt-10");
+      $("#footerGeneral").removeClass("mt-5");
+      $("#formulario-contacto").slideToggle(1000, function() {
+        
         let tituloForm = $("#tituloForm");
-
         $("<h2 class='text-center'>Mensaje enviado con éxito</h2>").insertAfter(tituloForm);
+        
       });
     })
     .fail(function(error) {
-      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+      if (errorMessage.length === 0) {
+        $("<p class='text-center error-message'>Error al enviar el formulario.</p>").insertBefore("#botonForm")
+
+      }
     });
   } else {
-    alert("Por favor, complete todos los campos obligatorios y resuelva correctamente el captcha.");
+    // Si el mensaje de error no existe, agregarlo y hacer parpadear en rojo
+    if (errorMessage.length === 0) {
+      $("<p class='text-center error-message'>Complete todos los campos obligatorios correctamente.</p>").insertBefore("#botonForm")
+    }
   }
 }
 
 
 
-    $(document).ready(function () {
-      // Evento mouseover/mouseout para cambiar opacidad y mostrar texto con fadeIn()
-      $("#imagenEmpresa").hover(
-        function () {
-          $("#imagenEmpresa").fadeOut(500, function () {
-            $(this).attr("src", "img/tienda-interior.jpg").fadeIn(500);
-          });
-          $("#textoImagen").fadeOut(500, function () {
-            $(this).text("");
-            $(this).append("Nuestra tienda").fadeIn(500);
-          });
-        },
-        function () {
-          $("#imagenEmpresa").fadeOut(500, function () {
-            $(this).attr("src", "img/tienda.jpg").fadeIn(500);
-          });
-          $("#textoImagen").fadeOut(500, function () {
-            $(this).text("");
-            $(this).prepend("Pasa el ratón sobre la imagen").fadeIn(500);
-          });
-        }
-      );
+$(document).ready(function () {
+  // Evento mouseover
+  $("#imagenEmpresa").mouseover(function () {
+    cambiarAppend("img/tienda-interior.jpg", "Nuestra tienda.");
+    
+  });
+
+  // Evento mouseout
+  $("#imagenEmpresa").mouseout(function () {
+    cambiarPreppend("img/tienda.jpg", "Pasa el ratón sobre la imagen");
+  });
+
+  function cambiarAppend(nuevaImagen, nuevoTexto) {
+    $("#imagenEmpresa").fadeOut(500, function () {
+      $(this).attr("src", nuevaImagen).fadeIn(500);
     });
+
+    $("#textoImagen").fadeOut(500, function () {
+      $(this).text("");
+      $(this).append(nuevoTexto).fadeIn(500);
+    });
+  }
+  function cambiarPreppend(nuevaImagen, nuevoTexto) {
+    $("#imagenEmpresa").fadeOut(500, function () {
+      $(this).attr("src", nuevaImagen).fadeIn(500);
+    });
+
+    $("#textoImagen").fadeOut(500, function () {
+      $(this).text(".");
+      $(this).prepend(nuevoTexto).fadeIn(500);
+    });
+  }
+});
+
 
 
     $(document).ready(function () {
@@ -157,3 +175,4 @@ function enviarFormulario() {
         $('html, body').animate({scrollTop: 0}, 'fast');
       });
     });
+    

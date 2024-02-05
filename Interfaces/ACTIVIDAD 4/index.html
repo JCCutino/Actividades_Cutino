@@ -32,10 +32,10 @@
           <div class="collapse navbar-collapse " id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link" href="#">Información</a>
+                      <a class="nav-link" href="#headingHistoria">Información</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#about">Contacto</a>
+                      <a class="nav-link" href="#tituloForm">Contacto</a>
                   </li>
               </ul>
           </div>
@@ -50,25 +50,29 @@
   </header>
 
   <main>
-    <h1 class=" text-center mb-4 mt-4">Información de la Empresa</h1>
+    <h1 class=" text-center mb-4 mt-4">EMPIRE GAMES</h1>
     <div class="container-fluid">
       
       <div class="row justify-content-center align-items-center g-2">
         <div class="col-md-8 mt-5">
     
          
-            <div class="accordion-item section">
-              <h2 class="accordion-header" id="headingHistoria">
+          <div class="accordion-item section">
+            <h2 class="accordion-header" id="headingHistoria">
                 <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseHistoria">
-                  <h2>Historia de la Empresa</h2>
+                    <h2>Historia de la Empresa</h2>
                 </button>
-              </h2>
-              <div class="accordion-body active">
+            </h2>
+            <div class="accordion-body active">
                 <p>Empire Games Sevilla es tu destino para todo lo relacionado con juegos de mesa, miniaturas, modelismo, maquetas y cartas coleccionables. Desde nuestra fundación en 2010, nos hemos dedicado a proporcionar a la comunidad de jugadores experiencias inigualables.</p>
-                <img id="imagenEmpresa" src="img/tienda.jpg" alt="Oficinas" class="img-fluid">
-                <p id="textoImagen" class="mt-2">Pasa el ratón sobre la imagen</p>
-              </div>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <img id="imagenEmpresa" src="img/tienda.jpg" alt="Oficinas" class="img-fluid img-empresa">
+                    <p id="textoImagen" class="mt-2">Pasa el ratón sobre la imagen</p>
+                </div>
             </div>
+        </div>
+        
+        
     
             <div class="accordion-item section">
               <h2 class="accordion-header">Información de Contacto</h2>
@@ -161,14 +165,14 @@
         
         
       </div>    
-          <button type="button" onclick="enviarFormulario()">Enviar</button>
+          <button id="botonForm" type="button" onclick="enviarFormulario()">Enviar</button>
       </form> 
     </div>
     
 
   </main>
   
-  <footer class="bg-dark text-white mt-5">
+  <footer class="bg-dark text-white mt-5" id="footerGeneral">
     <div class="container py-3" id="footer">
         <div class="row">
             <div class="col-md-4">

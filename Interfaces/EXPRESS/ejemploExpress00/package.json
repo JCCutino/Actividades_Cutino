@@ -1,0 +1,19 @@
+{
+  "name": "ejemploexpress00",
+  "version": "1.0.0",
+  "description": "Ejemplo básico express ",
+  "main": "00-express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "Cutino",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2" 
+   }
+   }
+  

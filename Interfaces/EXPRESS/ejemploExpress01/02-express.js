@@ -9,12 +9,12 @@ let express = require('express'),
 app
     .get('/', (req, res) =>{
         //res.sendFile(ruta+ 'index.html')
-        res.render("index", {titulo: "mi titulo dinamico"})
+        res.render("index", {contenido: "mi titulo dinamico", titulo: "Index"})
     })
 
     .get('/contacto', (req, res) =>{
         //res.sendFile(ruta+ 'index.html')
-        res.render("contact", {titulo: "Página de contacto"})
+        res.render("index", {contenido: "Página de contacto", titulo: "Contacto"})
     })
     
     .use((req, res) =>{

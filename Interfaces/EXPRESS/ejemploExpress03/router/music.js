@@ -1,98 +1,91 @@
-let express = require('express');
-let router = express.Router();
-let Artist = require('../models/artist'); 
+'use strict';
 
-router.get('/', async(req, res) => {
+const express = require('express');
+const router = express.Router();
+const Artist = require('../models/artist');
+
+let globalMessage = '';
+
+
+router.get('/', async (req, res) => {
     try {
         const arrayArtistDB = await Artist.find();
-        console.log('Datos recuperados:', arrayArtistDB); // Agrega esta línea para imprimir los datos recuperados en la consola
+        
+        let message = req.query.message; 
+        
         res.render("music/artist", {
-            arrayArtist: arrayArtistDB
+            arrayArtist: arrayArtistDB,
+            message: globalMessage  
         });
+
+        globalMessage = '';
     } catch (error) {
-        console.error('Error al recuperar datos:', error); // Agrega esta línea para imprimir cualquier error en la consola
+        console.error('Error al recuperar datos:', error);
     }
 });
 
 
-/*
-router.get('/crear', function(req, res){
-    res.render('crear', { titulo: "Crear", contenido: "Crear Pokemon" });
-});
 
-router.post('/', async (req, res)=>{
+router.post('/', async (req, res) => {
     const body = req.body;
-    console.log(body);
+    console.log("Datos recibidos:", body);
+
     try {
-        const pokemonDB = new Pokemon(body);
-        await pokemonDB.save();
-        res.redirect('/pokemon');
+        const artistDB = new Artist(body);
+        globalMessage = 'Artista añadido exitosamente';
+
+        await artistDB.save();
+
+        res.redirect('/'); 
     } catch (error) {
-        console.log('error', error)
+        console.log('Error al guardar el artista:', error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+router.post('/delete', async (req, res) => {
+    const artistId = req.body.artistId; 
+    try {
+        const artistDB = await Artist.findByIdAndDelete(artistId);
+        globalMessage = 'Artista eliminado exitosamente';
+
+        res.redirect('/');
+    } catch (error) {
+        console.log('Se ha producido un error:', error);
+        res.status(500).json({
+            estado: false,
+            mensaje: 'Se produjo un error al eliminar el artista'
+        });
     }
 });
 
-router.get('/:id', async(req,res) => {
-    const id = req.params.id
-    try {
-        const pokemonDB = await Pokemon.findOne({_id:id});
-        console.log(pokemonDB);
-        res.render('detalle', {
-            pokemon : pokemonDB,
-            error: false
-        });
-    } catch (error) {
-        console.log('Se ha producido un error', error)
-        res.render('detalle', {
-            mensaje : 'Pokemon no encontrado',
-            error: true
-        });
-    }
-})
+router.post('/update', async (req, res) => {
+    const id = req.body.id; // Aquí se obtiene el ID del cuerpo de la solicitud
+    const { name, genre, biography } = req.body;
 
-router.delete('/:id', async(req,res) => {
-    const id = req.params.id
     try {
-        const pokemonDB = await Pokemon.findByIdAndDelete({_id:id});
-        console.log(pokemonDB);
-   
-        if(!pokemonDB){
-            res.json({
-                estado: false,
-                mensaje: 'Pokemon no eliminado'
-            })
-        }else{
-            res.json({
-                estado: true,
-                mensaje: 'Pokemon eliminado'
-            })
+        let updatedArtist = await Artist.findByIdAndUpdate(id, { name, genre, biography }, { new: true });
+        
+        if (updatedArtist) {
+            console.log('Artista actualizado correctamente:', updatedArtist);
+            
+            globalMessage = 'Artista actualizado exitosamente';
+
+            res.redirect('/');
+        } else {
+            console.log('No se encontró el artista para actualizar');
+            res.status(404).json({
+                success: false,
+                message: 'No se encontró el artista para actualizar'
+            });
         }
-
     } catch (error) {
-        console.log('Se ha producido un error');
-        console.log(id);
+        // Manejo de errores
+        console.error('Error al actualizar el artista:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Se produjo un error al actualizar el artista'
+        });
     }
-})
-
-router.put('/:id', async(req,res) => {
-    const id = req.params.id
-    const body = req.body;
-    try {
-        const pokemonDB = await Pokemon.findByIdAndUpdate(
-            id, body, {useFindAndModify: false}
-        );
-        console.log(pokemonDB);
-   
-            res.json({
-                estado: true,
-                mensaje: 'Pokemon editado'
-            })
-    
-    } catch (error) {
-        console.log('Se ha producido un error');
-        console.log(id);
-    }
-})
-*/
+});
 
 module.exports = router;

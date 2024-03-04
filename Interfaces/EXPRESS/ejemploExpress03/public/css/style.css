@@ -1,0 +1,12 @@
+body {
+    background-color: #222; /* Color oscuro de fondo */
+    color: #fff; /* Color de texto blanco para mayor contraste */
+    font-family: Arial, sans-serif; /* Fuente para el texto */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+}
+
+
+.modal{
+    color: #222;
+}

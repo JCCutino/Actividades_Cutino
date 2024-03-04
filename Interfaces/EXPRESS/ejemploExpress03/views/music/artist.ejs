@@ -1,27 +1,172 @@
-<%- include("../template/header", {titulo: 'Panel de Admin'}) %>
+<%- include("../template/header", {titulo: 'Panel de Admin' }) %>
 
-<div class="container">
-
-  <h1 class="mt-3">Artistas de Música</h1>
-
-  <% if (arrayArtist.length > 0) { %>
-    <% arrayArtist.forEach((artist, index) => { %>
-      <div class="row mt-3<%= index % 2 === 0 ? ' flex-row-reverse' : '' %>">
-        <div class="col-md-6">
-          <h2><%= artist.name %></h2>
-          <img src="images/artist/<%= artist.image %>" class="img-fluid mb-3" alt="Imagen del artista <%= artist.name %>">
-        </div>
-        <div class="col-md-6">
-          <p><strong>Género:</strong> <%= artist.genre %></p>
-          <p><strong>Biografía:</strong> <%= artist.biography %></p>
-        </div>
+  <div class="container">
+    <% if (message) { %>
+      <div id="alertMessage" class="alert alert-success mt-3" role="alert">
+          <%= message %>
       </div>
-      <hr>
-    <% }) %>
-  <% } else { %>
-    <p>No hay artistas disponibles</p>
   <% } %>
-
+  
+  <script>
+      $(document).ready(function() {
+          const alertMessage = $('#alertMessage');
+          
+          if (alertMessage.length) {
+              setTimeout(function() {
+                  alertMessage.fadeOut(1000); 
+              }, 2000);
+          }
+      });
+  </script>
+  
+  
+  <div class="d-flex justify-content-center align-items-center">
+    <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#crearArtistaModal">
+        Crear Artista
+    </button>
 </div>
 
-<%- include("../template/footer.ejs") %>
+   
+        <h1 class="mt-3">Artistas</h1>
+
+        <% if (arrayArtist.length> 0) { %>
+          <% arrayArtist.forEach((artist, index)=> { %>
+            <div class="row mt-3<%= index % 2 === 0 ? ' flex-row-reverse' : '' %>">
+              <div class="col-md-6">
+                <h2>
+                  <%= artist.name %>
+                </h2>
+                <img src="/images/artist/<%= artist.image %>" class="img-fluid mb-3"
+                  alt="Imagen del artista <%= artist.name %>">
+              </div>
+              <div class="col-md-6">
+                <p><strong>Género:</strong>
+                  <%= artist.genre %>
+                </p>
+                <p><strong>Biografía:</strong>
+                  <%= artist.biography %>
+                </p>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal"
+                  data-target="#eliminarArtistaModal<%= artist._id %>">
+                  Eliminar
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                  data-target="#editarArtistaModal<%= artist._id %>">
+                  Editar
+                </button>
+
+              </div>
+            </div>
+            <hr>
+
+            <div class="modal fade" id="eliminarArtistaModal<%= artist._id %>" tabindex="-1"
+              aria-labelledby="eliminarArtistaModalLabel<%= artist._id %>" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarArtistaModalLabel<%= artist._id %>">Confirmar Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>¿Estás seguro de que quieres eliminar al artista <%= artist.name %>?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form id="deleteForm" action="/delete" method="POST">
+                      <input type="hidden" id="artistId" name="artistId" value="<%= artist._id %>">
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                    </form>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="editarArtistaModal<%= artist._id %>" tabindex="-1"
+              aria-labelledby="editarArtistaModalLabel<%= artist._id %>" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editarArtistaModalLabel<%= artist._id %>">Editar Artista</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form id="editarArtistaForm<%= artist._id %>" action="/update" method="POST">
+                    <div class="modal-body">
+                      <input type="hidden" name="id" value="<%= artist._id %>">
+                      <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="name" value="<%= artist.name %>"
+                          required>
+                      </div>
+                      <div class="form-group">
+                        <label for="genero">Género:</label>
+                        <input type="text" class="form-control" id="genero" name="genre" value="<%= artist.genre %>"
+                          required>
+                      </div>
+                      <div class="form-group">
+                        <label for="biografia">Biografía:</label>
+                        <textarea class="form-control" id="biografia" name="biography" rows="3"
+                          required><%= artist.biography %></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <% }) %>
+              <% } else { %>
+                <p>No hay artistas disponibles</p>
+                <% } %>
+
+  </div>
+
+  <div class="modal fade" id="crearArtistaModal" tabindex="-1" aria-labelledby="crearArtistaModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearArtistaModalLabel">Crear Nuevo Artista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/" method="POST">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="genero">Género:</label>
+              <input type="text" class="form-control" id="genero" name="genre" required>
+            </div>
+            <div class="form-group">
+              <label for="biografia">Biografía:</label>
+              <textarea class="form-control" id="biografia" name="biography" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="rutaImagen" name="image" value="prueba.webp">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Crear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../template/footer.ejs") %>
